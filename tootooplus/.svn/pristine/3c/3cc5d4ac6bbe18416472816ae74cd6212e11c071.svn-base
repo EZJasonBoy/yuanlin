@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+
+    <include
+    android:id="@+id/clip_view_df_head_layout" 
+    layout="@layout/two_or_one_btn_head"/>
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        
+        <com.ninetowns.ui.widget.clipimageview.ClipImageView
+        android:id="@+id/clip_view_df_src_pic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    	<com.ninetowns.ui.widget.clipimageview.ClipView
+        android:id="@+id/cilp_view_df_clip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        
+    </RelativeLayout>
+    
+    
+
+</LinearLayout>

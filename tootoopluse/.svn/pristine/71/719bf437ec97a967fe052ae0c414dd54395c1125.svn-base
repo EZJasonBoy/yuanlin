@@ -1,0 +1,9 @@
+<resources>
+ <dimen name="mystory_editorordel_fotter_height">50dp</dimen>   
+ 
+ <!-- 个人信息vip等级绿色矩形画的距离 -->
+ <dimen name="per_info_vip_precent_start_x">2dip</dimen>
+ <dimen name="per_info_vip_precent_start_y">3dip</dimen>
+ <dimen name="per_info_vip_precent_end_y">4dip</dimen>
+    
+</resources>

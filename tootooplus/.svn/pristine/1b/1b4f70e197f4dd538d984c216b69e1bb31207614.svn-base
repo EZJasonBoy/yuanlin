@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
+
+    <ImageView
+        android:id="@+id/hasused_icon_priortycode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_prioritycode" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/hasused_icon_priortycode" >
+
+        <TextView
+            android:id="@+id/hasused_prioritycode_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45454"
+            android:textColor="#bb2b2b" />
+
+        <TextView
+            android:id="@+id/hasused_prioritycode_usetime_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hasused_prioritycode_text"
+            android:text="@string/prioritycode_usedtime"
+            android:textColor="#8f8f8f" />
+    </RelativeLayout>
+
+</RelativeLayout>

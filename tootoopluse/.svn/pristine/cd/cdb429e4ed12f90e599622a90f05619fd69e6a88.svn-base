@@ -1,0 +1,390 @@
+package com.ninetowns.tootoopluse.adapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.ViewGroup.LayoutParams;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.ninetowns.library.util.LogUtil;
+import com.ninetowns.tootoopluse.R;
+import com.ninetowns.tootoopluse.activity.StoryDetailViewPagerActivity;
+import com.ninetowns.tootoopluse.activity.VideoActivity;
+import com.ninetowns.tootoopluse.adapter.DragAdapter.MyOnGlobalLayoutListener;
+import com.ninetowns.tootoopluse.adapter.DragAdapter.ViewHolder;
+import com.ninetowns.tootoopluse.application.TootooPlusEApplication;
+import com.ninetowns.tootoopluse.bean.SkipPhotoViewPagerBean;
+import com.ninetowns.tootoopluse.bean.StoryDetailListBean;
+import com.ninetowns.tootoopluse.bean.WishDetailPageListBean;
+import com.ninetowns.tootoopluse.helper.ConstantsTooTooEHelper;
+import com.ninetowns.tootoopluse.util.CommonUtil;
+import com.ninetowns.tootoopluse.util.UIUtils;
+import com.ninetowns.ui.cooldraganddrop.SpanVariableGridView;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
+
+/**
+ * 
+ * @ClassName: WishDetailAdapter
+ * @Description: 心愿详情数据适配器
+ * @author wuyulong
+ * @date 2015-2-27 上午9:37:53
+ * 
+ */
+public class WishDetailAdapter extends BaseAdapter {
+	public List<WishDetailPageListBean> pageListData;
+	private LayoutInflater mInflater;
+	public Activity activity;
+
+	public WishDetailAdapter(Activity activity,
+			List<WishDetailPageListBean> pageListData) {
+		this.pageListData = pageListData;
+		this.activity = activity;
+		setInflater();
+	}
+
+	private void setInflater() {
+		mInflater = LayoutInflater.from(TootooPlusEApplication.getAppContext());
+
+	}
+
+	@Override
+	public int getCount() {
+		return pageListData.size();
+	}
+
+	@Override
+	public Object getItem(int position) {
+		return pageListData.get(position);
+	}
+
+	@Override
+	public long getItemId(int position) {
+		return position;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		WishDetailPageListBean storyDetailBean = pageListData.get(position);
+		ViewHolder viewHolder = null;
+		if (convertView == null) {
+			convertView = mInflater.inflate(R.layout.griditem_laucher_news,
+					null);
+			viewHolder = new ViewHolder();
+			ViewUtils.inject(viewHolder, convertView);
+			convertView.setTag(viewHolder);
+		} else {
+			viewHolder = (ViewHolder) convertView.getTag();
+		}
+		
+		if(!TextUtils.isEmpty(storyDetailBean.getPageType())){
+			 int height=0;
+			int strType = Integer.valueOf(storyDetailBean.getPageType());
+			final int with = CommonUtil.getWidth(TootooPlusEApplication.getAppContext());
+			if(strType==1){//文字*viewHolder.mItemText.getLineCount()
+				String content=storyDetailBean.getPageContent();
+				int textsize = Integer.valueOf(storyDetailBean.getFontSize());
+				if(!TextUtils.isEmpty(content)){
+					ViewTreeObserver observer = viewHolder.mItemText.getViewTreeObserver();
+					if(observer!=null){
+						observer.addOnGlobalLayoutListener(new MyOnGlobalLayoutListener(viewHolder, convertView, storyDetailBean));
+						
+					}
+					
+					/*
+					int titleHeight=0;
+					double yushu = 0;
+					double tlength = content.length();
+					 if(textsize==1){//一号字体
+						 titleHeight=TootooPlusEApplication.getAppContext().getResources().getDimensionPixelSize(R.dimen.title_one_height);
+						 yushu = tlength/15;//18
+					 }else{
+						 titleHeight=TootooPlusEApplication.getAppContext().getResources().getDimensionPixelSize(R.dimen.title_bar_height);
+						 yushu = tlength/20;//25  28 
+					 }
+					  
+					 double quzheng = Math.ceil(yushu);//取上限 只要有余数就取
+					
+					
+					if(quzheng==1){
+						height=titleHeight;	
+					}else if(quzheng==2){
+//						height=212;	
+						height=titleHeight+titleHeight/2*1;	
+					}else if(quzheng==3){
+//						height=308;	
+						height=titleHeight+titleHeight/2*2;	
+					}else if(quzheng==4){
+						height=titleHeight+titleHeight/2*3;	
+//						height=404;	
+					}else if(quzheng==5){
+						height=titleHeight+titleHeight/2*4;	
+//						height=500;	
+						
+					}else{
+						height=RelativeLayout.LayoutParams.WRAP_CONTENT;
+					}
+					
+				*/
+//					height=RelativeLayout.LayoutParams.WRAP_CONTENT;		
+				}else{
+					height=RelativeLayout.LayoutParams.WRAP_CONTENT;	
+				}
+				
+			}else{
+				height = with / 2;
+			
+			}
+		
+			LayoutParams layoutParam = new LayoutParams(with, height);
+			convertView.setLayoutParams(layoutParam);
+			if (layoutParam != null) {
+				SpanVariableGridView.LayoutParams spanVariableGridViewParams = new SpanVariableGridView.LayoutParams(
+						convertView.getLayoutParams());
+				int elementType = Integer.valueOf(storyDetailBean.getElementType());
+				if (elementType == 1) {
+					spanVariableGridViewParams.span = 2;
+				} else if (elementType == 2) {
+					spanVariableGridViewParams.span = 1;
+				}else{
+					spanVariableGridViewParams.span = 2;
+				}
+				
+				convertView.setLayoutParams(spanVariableGridViewParams);
+			}
+		}
+	
+
+		setDisplayView(viewHolder, storyDetailBean);
+		OnClickToPage(viewHolder, storyDetailBean);
+
+		return convertView;
+	}
+
+	/**
+	 * 
+	 * @Title: OnClickToPage
+	 * @Description: 点击page页
+	 * @param
+	 * @return
+	 * @throws
+	 */
+	private void OnClickToPage(ViewHolder viewHolder,
+			WishDetailPageListBean storyDetailBean) {
+		viewHolder.mItemImage.setOnClickListener(new MyOnClickListener(
+				viewHolder, storyDetailBean));
+	}
+
+	private void setDisplayView(ViewHolder viewholder,
+			WishDetailPageListBean storyDetailBean) {
+		int strType = Integer.valueOf(storyDetailBean.getPageType());
+		String pageImage = storyDetailBean.getPageImgThumb();
+		int elementType = Integer.valueOf(storyDetailBean.getElementType());
+		int location = Integer.valueOf(storyDetailBean.getLocation());
+		int textsize = Integer.valueOf(storyDetailBean.getFontSize());
+		switch (strType) {
+		case 1:// 文字
+			if (textsize == 1) {
+				viewholder.mItemText.setTextSize(UIUtils.px2Sp(
+						TootooPlusEApplication.getAppContext(),
+						(int) TootooPlusEApplication.getAppContext()
+								.getResources().getDimension(R.dimen.h1)));// 标题)
+			} else {
+				viewholder.mItemText.setTextSize(UIUtils.px2Sp(
+						TootooPlusEApplication.getAppContext(),
+						(int) TootooPlusEApplication.getAppContext()
+								.getResources().getDimension(R.dimen.h4)));
+			}
+			viewholder.mIVVideoIcon.setVisibility(View.INVISIBLE);
+//			viewholder.mRootView
+//					.setBackgroundResource(R.drawable.bg_recomde_tv_border);
+			viewholder.mItemText.setText(""+storyDetailBean.getPageContent());
+			break;
+		case 2:// 图片
+			viewholder.mIVVideoIcon.setVisibility(View.INVISIBLE);
+			// 图片 长方形或者正方形
+//			if (elementType == 1) {// 长方形
+
+//				if (!TextUtils.isEmpty(pageImage)) {
+//					ImageLoader.getInstance().displayImage(pageImage,
+//							new ImageViewAware(viewholder.mItemImage),
+//							CommonUtil.OPTIONS_ALBUM_DETAIL);
+//				}
+
+//			} else if (elementType == 2) {// 正方形
+				if (!TextUtils.isEmpty(pageImage)) {
+					ImageLoader.getInstance().displayImage(pageImage,
+							new ImageViewAware(viewholder.mItemImage),
+							CommonUtil.OPTIONS_ALBUM_DETAIL);
+				}
+//			}
+
+			break;
+		case 3:// 视频
+			viewholder.mIVVideoIcon.setVisibility(View.VISIBLE);
+			if (!TextUtils.isEmpty(pageImage)) {
+				ImageLoader.getInstance().displayImage(pageImage,
+						new ImageViewAware(viewholder.mItemImage),
+						CommonUtil.OPTIONS_ALBUM_DETAIL);
+			}
+			break;
+		}
+
+	}
+
+	/**
+	 * 
+	 * @ClassName: ViewHolder
+	 * @Description: 优化滑动拖动界面
+	 * @author wuyulong
+	 * @date 2015-1-28 下午1:21:16
+	 * 
+	 */
+	public static class ViewHolder {
+		@ViewInject(R.id.item_img)
+		public ImageView mItemImage;// 图片
+		@ViewInject(R.id.item_text)
+		// 文字
+		public TextView mItemText;//
+		@ViewInject(R.id.iv_video_icon)
+		public ImageView mIVVideoIcon;// 视频的icon
+		@ViewInject(R.id.item_relate)
+		// 跟布局
+		public View mRootView;
+
+	}
+
+	/**
+	 * 
+	 * @ClassName: MyOnClickListener
+	 * @Description:
+	 * @author wuyulong
+	 * @date 2015-2-27 上午9:17:46
+	 * 
+	 */
+	class MyOnClickListener implements View.OnClickListener {
+		public List<WishDetailPageListBean> photoList = new ArrayList<WishDetailPageListBean>();
+		private ViewHolder viewHolder;
+		private WishDetailPageListBean storyDetailBean;
+		public int position;
+
+		public MyOnClickListener(ViewHolder viewHolder,
+				WishDetailPageListBean storyDetailBean) {
+			this.viewHolder = viewHolder;
+			this.storyDetailBean = storyDetailBean;
+			// 从集合中过滤
+			flateData();
+		}
+
+		/**
+		 * 
+		 * @Title: flateData
+		 * @Description: 过滤图片数据
+		 * @param
+		 * @return
+		 * @throws
+		 */
+		private void flateData() {
+			for (int i = 0; i < pageListData.size(); i++) {
+				WishDetailPageListBean iterable_element=pageListData.get(i);
+				if (iterable_element.getPageType().equals("2")) {// 如果是图片
+					photoList.add(iterable_element);
+				}
+			
+			}
+			
+			
+		}
+
+		@Override
+		public void onClick(View v) {
+			if (storyDetailBean.getPageType().equals("2")) {// 如果是图片
+				for (int i = 0; i < photoList.size(); i++) {
+					WishDetailPageListBean iterable_element=photoList.get(i);
+					if (iterable_element.getPageType().equals("2")) {// 如果是图片
+						if(storyDetailBean.getPageId().equals(iterable_element.getPageId())){
+							this.position=i;
+						}
+					}
+				}
+				SkipPhotoViewPagerBean skipPhotoBean=new SkipPhotoViewPagerBean();
+				// 找到所点击的是第几个
+				Intent intent = new Intent(activity,
+						StoryDetailViewPagerActivity.class);
+				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				skipPhotoBean.setPhotoList(photoList);
+				skipPhotoBean.setPosition(position);
+				intent.putExtra("photolist", skipPhotoBean);
+				activity.startActivity(intent);
+			} else if (storyDetailBean.getPageType().equals("3")) {// 如果是视频 那么播放
+				String videoUrl=storyDetailBean.getPageVideoUrl();
+				if(!TextUtils.isEmpty(videoUrl)){
+					Intent intent=new Intent(activity,VideoActivity.class);
+					Bundle bundle=new Bundle();
+					bundle.putString(ConstantsTooTooEHelper.VIDEO_URL, videoUrl);
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					intent.putExtra(ConstantsTooTooEHelper.BUNDLE, bundle);
+					activity.startActivity(intent);
+				}else{
+					LogUtil.systemlogError("视频地址错误", videoUrl);
+				}
+				
+
+			}
+		}
+
+	}
+	class MyOnGlobalLayoutListener implements OnGlobalLayoutListener{
+		private ViewHolder viewHolder;
+		private View convertView;
+		private WishDetailPageListBean storyDetailBean;
+		public MyOnGlobalLayoutListener(ViewHolder viewHolder,View convertView,WishDetailPageListBean storyDetailBean) {
+			this.viewHolder=viewHolder;
+			this.convertView=convertView;
+			this.storyDetailBean=storyDetailBean;
+		}
+
+		@SuppressLint("NewApi")
+		@Override
+		public void onGlobalLayout() {
+			final int with = CommonUtil.getWidth(TootooPlusEApplication.getAppContext());
+			
+			int height=(int) (viewHolder.mItemText.getLineHeight()*viewHolder.mItemText.getLineCount()+(int)(viewHolder.mItemText.getLineSpacingExtra())*(viewHolder.mItemText.getLineCount()-1)-viewHolder.mItemText.getLineSpacingExtra());
+			
+			
+			LayoutParams layoutParam = new LayoutParams(with, height);
+			convertView.setLayoutParams(layoutParam);
+			if (layoutParam != null) {
+				SpanVariableGridView.LayoutParams spanVariableGridViewParams = new SpanVariableGridView.LayoutParams(
+						convertView.getLayoutParams());
+				int elementType = Integer.valueOf(storyDetailBean.getElementType());
+				if (elementType == 1) {
+					spanVariableGridViewParams.span = 2;
+				} else if (elementType == 2) {
+					spanVariableGridViewParams.span = 1;
+				}else{
+					spanVariableGridViewParams.span = 2;
+				}
+				
+				convertView.setLayoutParams(spanVariableGridViewParams);
+			}
+		
+		}
+		
+	}
+}

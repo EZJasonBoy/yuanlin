@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+	<RelativeLayout
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	    
+	    <include
+	    android:id="@+id/join_mem_top_layout"
+	    layout="@layout/two_or_one_btn_head"/>
+	    
+	    <LinearLayout
+		android:id="@+id/join_mem_bottom_layout"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/join_mem_bottom_height"
+		android:layout_alignParentBottom="true"
+		android:orientation="horizontal"
+		android:gravity="center">
+			<TextView
+			android:id="@+id/join_member_join_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:textColor="@color/btn_org_color"/>
+		    
+		</LinearLayout>
+		
+	    
+	    <LinearLayout
+		android:id="@+id/join_mem_num_layout"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/join_mem_bottom_height"
+		android:layout_above="@id/join_mem_bottom_layout"
+		android:orientation="horizontal"
+		android:gravity="center">
+			<TextView
+			android:id="@+id/join_member_num_tv"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:textColor="@color/btn_gray_color"/>
+		    
+		</LinearLayout>
+		
+	    <GridView
+	    android:id="@+id/join_mem_gv"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_horizontal"
+	    android:layout_below="@+id/join_mem_top_layout"
+	    android:layout_above="@+id/join_mem_num_layout"
+	    android:horizontalSpacing="15dp"
+	    android:listSelector="#00000000"
+	    android:numColumns="4"
+	    android:verticalSpacing="30dp"/>
+	    
+	    
+	</RelativeLayout>
+    
+</LinearLayout>

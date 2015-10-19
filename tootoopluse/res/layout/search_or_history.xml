@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100" >
+
+    <LinearLayout
+        android:id="@+id/ll_history_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/title_bar_height"
+        android:layout_weight="100"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="70"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ListView
+                android:id="@+id/history_list"
+                style="@style/ListViewDefaultStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <CheckedTextView
+                android:id="@+id/ct_clear_history"
+                style="@style/TvStyleDefault"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:background="@drawable/round_org_backgroud"
+                android:text="清除历史记录"
+                android:textColor="@color/white"
+                android:textSize="@dimen/h1" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

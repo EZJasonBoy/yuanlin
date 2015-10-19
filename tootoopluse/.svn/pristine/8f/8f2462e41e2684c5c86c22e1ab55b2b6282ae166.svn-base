@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+    
+    <include
+    layout="@layout/two_or_one_btn_head"/>
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+	    android:paddingTop="20dp"
+	    android:paddingRight="10dp"
+	    android:paddingBottom="20dp"
+        android:orientation="vertical">
+            <LinearLayout
+            android:id="@+id/shop_cert_shop_group_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tab_height"
+            android:background="@color/white"
+            android:orientation="horizontal">
+               
+                <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/btn_org_color"
+                android:gravity="center">
+                
+                    <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_shop_cert_shop"/>
+                    
+                </LinearLayout>
+                
+                <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:paddingLeft="10dp">
+                    <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:orientation="vertical">
+	                    
+	                    <LinearLayout
+	                    android:layout_width="match_parent"
+	                    android:layout_height="0dp"
+	                    android:layout_weight="1"
+	                    android:gravity="center_vertical"
+	                    android:orientation="horizontal">
+	                        
+	                        <TextView
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:text="@string/shop_cert_shop"
+	                        />
+	                        
+	                    </LinearLayout>
+	                    
+	                    <View
+	                    android:layout_width="match_parent"
+	                    android:layout_height="0.5dp"
+	                    android:background="@color/title_hor_line"/>
+	                    
+	                    <LinearLayout
+	                    android:layout_width="match_parent"
+	                    android:layout_height="0dp"
+	                    android:layout_weight="1"
+	                    android:gravity="center_vertical"
+	                    android:orientation="horizontal">
+	                        <TextView
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:text="@string/shop_cert_shop_info"
+	                        android:textSize="@dimen/h5"/>
+	                    </LinearLayout>
+	                    
+	                </LinearLayout>
+	               	<ImageView
+	               	android:layout_width="wrap_content"
+	               	android:layout_height="wrap_content"
+	               	android:src="@drawable/icon_shop_cert_remmend"
+	               	android:layout_alignParentRight="true"
+	               	android:layout_alignParentTop="true"/>  
+                    
+                </RelativeLayout>
+            </LinearLayout>
+            
+            <LinearLayout
+            android:id="@+id/shop_cert_shop_child_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_item_hight"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_business"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:id="@+id/shop_businessLicence_upload_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/btn_shop_cert_upload"
+                        android:text="@string/shop_cert_upload_business"/>
+                        
+                    </LinearLayout>
+                    
+                </LinearLayout>
+                
+ 				<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_example"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:orientation="horizontal">
+                        
+                        <ImageView
+                        android:id="@+id/shop_businessLicence_iv"
+                        android:layout_width="@dimen/shop_cert_image_width"
+                        android:layout_height="@dimen/shop_cert_image_height"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/image_business_licence"/>
+                    </LinearLayout>
+                    
+                </LinearLayout>             
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/title_hor_line"/>
+                
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_item_hight"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_food_flow"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:id="@+id/shop_foodCirculationPermits_upload_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/btn_shop_cert_upload"
+                        android:text="@string/shop_cert_upload_food_flow"/>
+                        
+                    </LinearLayout>
+                    
+                </LinearLayout>
+                
+ 				<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_example"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:orientation="horizontal">
+                        
+                        <ImageView
+                        android:id="@+id/shop_foodCirculationPermits_iv"
+                        android:layout_width="@dimen/shop_cert_image_width"
+                        android:layout_height="@dimen/shop_cert_image_height"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/image_food_circulation_permits"/>
+                    </LinearLayout>
+                    
+                </LinearLayout>             
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/title_hor_line"/>
+                
+            
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_item_hight"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_food_product"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:id="@+id/shop_foodProductionLicence_upload_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/btn_shop_cert_upload"
+                        android:text="@string/shop_cert_upload_food_product"/>
+                        
+                    </LinearLayout>
+                    
+                </LinearLayout>
+ 				<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_example"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:orientation="horizontal">
+                        
+                        <ImageView
+                        android:id="@+id/shop_foodProductionLicence_iv"
+                        android:layout_width="@dimen/shop_cert_image_width"
+                        android:layout_height="@dimen/shop_cert_image_height"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/image_food_production_licence"/>
+                    </LinearLayout>
+                    
+                </LinearLayout>             
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/title_hor_line"/>
+                
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_item_hight"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_food_hygiene"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:id="@+id/shop_foodHygieneLicence_upload_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/btn_shop_cert_upload"
+                        android:text="@string/shop_cert_upload_food_hygiene"/>
+                        
+                    </LinearLayout>
+                    
+                </LinearLayout>
+                
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_example"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:orientation="horizontal">
+                        
+                        <ImageView
+                        android:id="@+id/shop_foodHygieneLicence_iv"
+                        android:layout_width="@dimen/shop_cert_image_width"
+                        android:layout_height="@dimen/shop_cert_image_height"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/image_food_hygiene_licence"/>
+                    </LinearLayout>
+                    
+                </LinearLayout>
+            	
+            	<View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/title_hor_line"/>
+            
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_item_hight"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_ID_card"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:id="@+id/shop_IDCard_front_upload_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/btn_shop_cert_upload"
+                        android:text="@string/shop_cert_upload_ID_card_front"/>
+                        
+                    </LinearLayout>
+                    
+                </LinearLayout>
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_example"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:orientation="horizontal">
+                        
+                        <ImageView
+                        android:id="@+id/shop_IDCard_front_iv"
+                        android:layout_width="@dimen/shop_cert_image_width"
+                        android:layout_height="@dimen/shop_cert_image_height"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/image_idcard_front"/>
+                    </LinearLayout>
+                    
+                </LinearLayout>
+            	
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_item_hight"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal">
+                        
+						<!-- 空 -->                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:id="@+id/shop_IDCard_reverse_upload_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/btn_shop_cert_upload"
+                        android:text="@string/shop_cert_upload_ID_card_oppo"/>
+                        
+                    </LinearLayout>
+                    
+                </LinearLayout>
+                
+            	
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_example"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:orientation="horizontal">
+                        
+                        <ImageView
+                        android:id="@+id/shop_IDCard_reverse_iv"
+                        android:layout_width="@dimen/shop_cert_image_width"
+                        android:layout_height="@dimen/shop_cert_image_height"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/image_idcard_reverse"/>
+                    </LinearLayout>
+                    
+                </LinearLayout>
+                
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                    
+            	    <TextView
+            	    android:id="@+id/shop_cert_submit_verify"
+            	    android:layout_width="wrap_content"
+            	    android:layout_height="wrap_content"
+            	    android:gravity="center"
+            	    android:background="@drawable/btn_register_send_again_red"
+            	    android:text="@string/shop_cert_submit"/>
+            	    
+                </LinearLayout>
+            </LinearLayout>
+            
+         <!-- 个人 -->   
+         <LinearLayout
+         android:id="@+id/shop_cert_per_group_layout"
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/tab_height"
+         android:background="@color/white"
+         android:layout_marginTop="10dp"
+         android:orientation="horizontal">
+             <LinearLayout
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:background="@color/bg_shop_cert_color"
+             android:gravity="center">
+             
+                 <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/icon_shop_cert_per"/>
+                 
+             </LinearLayout>
+             <LinearLayout
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight="5"
+             android:paddingLeft="10dp"
+             android:orientation="vertical">
+                 
+                 <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_weight="1"
+                 android:gravity="center_vertical"
+                 android:orientation="horizontal">
+                     
+                     <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/shop_cert_personal"
+                     />
+                     
+                 </LinearLayout>
+                 
+                 <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.5dp"
+                 android:background="@color/title_hor_line"/>
+                 
+                 <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_weight="1"
+                 android:gravity="center_vertical"
+                 android:orientation="horizontal">
+                     <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/shop_cert_personal_info"
+                     android:textSize="@dimen/h5"/>
+                 </LinearLayout>
+                 
+             </LinearLayout>
+         </LinearLayout>   
+         <LinearLayout
+         android:id="@+id/shop_cert_per_child_layout"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="5dp"
+         android:orientation="vertical">
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_item_hight"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_ID_card"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/btn_shop_cert_upload"
+                        android:text="@string/shop_cert_upload_ID_card_front"/>
+                        
+                    </LinearLayout>
+                    
+                </LinearLayout>
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_example"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:orientation="horizontal">
+                        
+                        <ImageView
+                        android:id="@+id/per_IDCard_front_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                    </LinearLayout>
+                    
+                </LinearLayout>
+            	
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_item_hight"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal">
+                        
+						<!-- 空 -->                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/btn_shop_cert_upload"
+                        android:text="@string/shop_cert_upload_ID_card_oppo"/>
+                        
+                    </LinearLayout>
+                    
+                </LinearLayout>
+                
+            	
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                        
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shop_cert_example"/>
+                        
+                    </LinearLayout>
+                    <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:orientation="horizontal">
+                        
+                        <ImageView
+                        android:id="@+id/per_IDCard_reverse_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                    </LinearLayout>
+                    
+                </LinearLayout>
+                
+            	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                    
+            	    <TextView
+            	    android:id="@+id/per_submit_verify"
+            	    android:layout_width="wrap_content"
+            	    android:layout_height="wrap_content"
+            	    android:gravity="center"
+            	    android:background="@drawable/btn_register_send_again_red"
+            	    android:text="@string/shop_cert_submit"/>
+            	    
+                </LinearLayout>
+            </LinearLayout>
+             
+         </LinearLayout> 
+            
+    </ScrollView>
+</LinearLayout>

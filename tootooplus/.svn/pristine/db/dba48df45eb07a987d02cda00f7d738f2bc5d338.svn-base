@@ -1,0 +1,48 @@
+package com.ninetowns.tootooplus.fragment;
+
+import java.util.List;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.ninetowns.library.net.RequestParamsNet;
+import com.ninetowns.library.parser.AbsParser;
+import com.ninetowns.tootooplus.R;
+import com.ninetowns.tootooplus.bean.HomePageBean;
+import com.ninetowns.tootooplus.helper.TootooeNetApiUrlHelper;
+import com.ninetowns.ui.fragment.GroupFragment;
+
+/**
+ * 
+ * @ClassName: CommentedOnLineCommentFragment
+ * @Description: 线上 已点评
+ * @author wuyulong
+ * @date 2015-4-16 下午2:16:52
+ * 
+ */
+public class CommentedOnLineCommentFragment extends MyActivityGroupCommentFragment{
+
+@Override
+public void setDifferentParam(RequestParamsNet requestParamNet) {
+	requestParamNet.addQueryStringParameter(TootooeNetApiUrlHelper.TYPE, "0");//
+	requestParamNet.addQueryStringParameter(TootooeNetApiUrlHelper.STATUS, "3");//
+	
+}
+
+@Override
+public void onItemClickToSkip(View view, int position,
+		List<HomePageBean> parserData) {
+	// TODO Auto-generated method stub
+	
+}
+
+}

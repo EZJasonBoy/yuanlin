@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/title_bg"
+    android:gravity="center_vertical" >
+
+  
+
+    <LinearLayout
+        android:id="@+id/ll_wishdetail"
+        android:layout_width="match_parent"
+       style="@style/FotterStyle"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <CheckedTextView
+                android:id="@+id/ct_want_eate"
+                style="@style/fotter_btn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/icon_ete_2"
+                android:padding="@dimen/button_horizontal_margin"
+                android:text="我要白吃" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <CheckedTextView
+                android:id="@+id/ct_chat_wish"
+                style="@style/fotter_btn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/icon_talk_detail"
+                android:text="群聊" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <CheckedTextView
+                android:id="@+id/ct_want_buy"
+                style="@style/fotter_btn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/icon_buy2"
+                android:text="去购买" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_commentdetail"
+        android:layout_width="match_parent"
+         style="@style/FotterStyle"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <CheckedTextView
+                android:id="@+id/ct_good"
+                style="@style/fotter_btn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/icon_good" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.ninetowns.ui.widget.WrapRatingBar
+                android:id="@+id/rb_detail_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:clickable="false"
+                android:focusable="false"
+                android:isIndicator="true"
+                android:longClickable="false"
+                android:numStars="5" />
+
+            <CheckedTextView
+                android:id="@+id/to_buy_num"
+                style="@style/fotter_btn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="推荐购买指数" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <CheckedTextView
+                android:id="@+id/ct_comment_want_buy"
+                style="@style/fotter_btn_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/icon_buy2"
+                android:text="去购买" />
+        </LinearLayout>
+    </LinearLayout>
+  <View style="@style/LineStyle" />
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<resources>
+<!-- 所有title标题   黑色 555555-->
+    <dimen name="h0">19sp</dimen>
+    <!-- h1 活动名称标题 -->
+    <dimen name="h1">18sp</dimen>
+    <!-- h2 二级标题 -->
+    <dimen name="h2">16sp</dimen>
+    <!-- h3 显示内容标题 -->
+    <dimen name="h3">14sp</dimen>
+    <!-- h4主要用于控件、按钮文本等效果 -->
+    <dimen name="h4">13sp</dimen>
+
+    <!-- 内容 -->
+    <dimen name="h5">12sp</dimen>
+    <!-- 模糊文字 -->
+    <dimen name="h6">9sp</dimen>
+    <dimen name="search_text">15sp</dimen>
+    <dimen name="super_large">30dp</dimen>
+    
+    <!-- 昵称字体大小 -->
+    <dimen name="nickname_font_size">12sp</dimen>
+    
+    <dimen name="title_num_dimen">23sp</dimen>
+    
+    <!-- tab字体大小 -->
+    <dimen name="tab_textsize">15sp</dimen>
+    
+    <dimen name="first_guide_title_size">28sp</dimen>
+    <dimen name="first_guide_content_size">16sp</dimen>
+</resources>

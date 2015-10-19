@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/per_home_head_cover_layout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+             >
+			
+            <ImageView
+                android:id="@+id/per_home_head_cover_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY" />
+            
+            <LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:background="@drawable/bg_user_info_head_bottom">
+			    
+			</LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="6" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/per_info_photo_bg_width_height"
+			            android:layout_height="@dimen/per_info_photo_bg_width_height" >
+
+                         <ImageView
+			            android:layout_width="@dimen/per_info_photo_bg_width_height"
+			            android:layout_height="@dimen/per_info_photo_bg_width_height"
+			            android:src="@drawable/icon_user_large_logo_bg"
+			            android:layout_centerInParent="true"/>
+                         
+                        <ImageView
+                            android:id="@+id/per_home_head_photo"
+                            android:layout_width="@dimen/per_info_photo_width_height"
+				            android:layout_height="@dimen/per_info_photo_width_height"
+				            android:src="@drawable/icon_user_large_logo"
+				            android:layout_centerInParent="true" />
+
+                        <ImageView
+                            android:id="@+id/per_home_head_vip"
+                            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:src="@drawable/icon_center_vip_1"
+				            android:layout_marginRight="4dp"
+				            android:layout_marginBottom="2dp"
+				            android:layout_alignParentRight="true"
+				            android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/per_home_head_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="80后吃货"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/h2" />
+                    
+                    <LinearLayout 
+                        android:id="@+id/framlayout_modifynick"
+                        android:layout_width="48dp"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content">
+                        <ImageView 
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_change_nick"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|right"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/follow"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/per_home_head_follow_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center"
+                            android:minWidth="30dp"
+                            android:text="关注数"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/title_hor_line" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/fans"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/per_home_head_fans_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:minWidth="30dp"
+                            android:text="粉丝数"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+			<LinearLayout
+			android:id="@+id/per_home_lv_head_back_layout"
+			android:layout_width="60dp"
+			android:layout_height="50dp"
+			android:orientation="horizontal"
+			android:gravity="center">
+			    
+			    <ImageView
+                android:id="@+id/per_home_lv_head_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_per_home_back" />
+			</LinearLayout>
+            
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

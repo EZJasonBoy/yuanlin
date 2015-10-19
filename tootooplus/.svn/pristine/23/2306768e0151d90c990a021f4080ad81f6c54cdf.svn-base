@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project
+    name="custom"
+    default="channels" >
+
+    <target name="umeng" >
+
+        <replaceregexp
+            encoding="utf-8"
+            file="AndroidManifest.xml"
+            match="&lt;meta\-data(\s+)android:name=&quot;UMENG_CHANNEL&quot;(\s+)android:value=&quot;[a-zA-Z0-9]+&quot;"
+            replace="&lt;meta\-data android:name=&quot;UMENG_CHANNEL&quot; android:value=&quot;${UMENG_CHANNEL}&quot;" />
+
+        <delete file="bin/AndroidManifest.xml" />
+
+        <antcall target="release" >
+        </antcall>
+
+        <copy
+            file="bin/StartActivity-release.apk"
+            tofile="bin/channels/tootooplus-${UMENG_CHANNEL}.apk" >
+        </copy>
+    </target>
+
+    <target name="channels" >
+
+        <antcall target="clean" >
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="tootoo" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="xiaomi" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="jifeng" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="lianxiang" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="baidu" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="360yingyong" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="wandoujia" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="tengxunyingyongbao" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="huawei" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="ditui" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="anzhishichang" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="91zhushou" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="anzhuoshichang" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="meizu" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="Nduo" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="mumayi" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="sougou" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="PPzhushou" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="UC" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="OPPO" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="jinli" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="suning" />
+        </antcall>
+
+        <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="yingyonghui" />
+        </antcall>
+           <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="youyi" />
+        </antcall>
+         <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="3Ganzhuo" />
+        </antcall>
+         <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="liqu" />
+        </antcall>
+         <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="taobao" />
+        </antcall>
+         <antcall target="umeng" >
+
+            <param
+                name="UMENG_CHANNEL"
+                value="aliyun" />
+        </antcall>
+    </target>
+
+</project>

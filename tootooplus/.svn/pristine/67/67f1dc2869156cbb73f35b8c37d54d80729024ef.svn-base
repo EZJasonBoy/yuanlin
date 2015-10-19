@@ -1,0 +1,5 @@
+<resources>
+ <dimen name="mystory_editorordel_fotter_height">50dp</dimen>
+ <dimen name="h5">10sp</dimen>
+ <dimen name="enter_number_height">72dp</dimen>
+</resources>

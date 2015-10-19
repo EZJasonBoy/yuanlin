@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/FotterStyle"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+     android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/ll_wishdetail"
+        style="@style/FotterStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:visibility="gone" >
+
+        <View
+            style="@style/LineStyle"
+            android:layout_width="match_parent" 
+            android:background="@color/guide_line_wg"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fotter_tab_height"
+            android:gravity="center_vertical"
+            
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <CheckedTextView
+                    android:id="@+id/ct_want_eate"
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@null"
+                    android:drawableTop="@drawable/icon_ete_2"
+                    android:text="@string/str_want_eate"
+                    android:textColor="@color/btn_gray_color"
+                    android:textSize="@dimen/h4" />
+            </LinearLayout>
+   <View
+            style="@style/VerticalLineStyle"
+            android:background="@color/guide_line_wg"
+            />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <CheckedTextView
+                    android:id="@+id/ct_chat_wish"
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@null"
+                    android:drawableTop="@drawable/icon_talk2"
+                    android:text="群聊"
+                    android:textColor="@color/btn_gray_color"
+                    android:textSize="@dimen/h4" />
+            </LinearLayout>
+ <View
+            style="@style/VerticalLineStyle"
+            android:background="@color/guide_line_wg"
+            />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/ll_buy_wish_baground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/button_horizontal_margin"
+                        android:contentDescription="@string/image_description"
+                        android:src="@drawable/icon_buy" />
+
+                    <CheckedTextView
+                        android:id="@+id/ct_want_buy"
+                        style="@style/TvStyleDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@null"
+                        android:text="@string/str_goto_buy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/h4" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_commentdetail"
+        style="@style/FotterStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:visibility="gone" >
+
+       <View
+            style="@style/LineStyle"
+             android:background="@color/guide_line_wg"
+            android:layout_width="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fotter_tab_height"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <CheckedTextView
+                    android:id="@+id/ct_good"
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@null"
+                    android:textColor="@color/btn_gray_color"
+                    android:textSize="@dimen/h4" />
+            </LinearLayout>
+ <View
+            style="@style/VerticalLineStyle"
+            android:background="@color/guide_line_wg"
+            />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <com.ninetowns.ui.widget.WrapRatingBar
+                    android:id="@+id/rb_detail_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" />
+
+                <CheckedTextView
+                    android:id="@+id/to_buy_num"
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@null"
+                    android:text="@string/str_recomment"
+                    android:textColor="@color/btn_gray_color"
+                    android:textSize="@dimen/h4" />
+            </LinearLayout>
+ <View
+            style="@style/VerticalLineStyle"
+            android:background="@color/guide_line_wg"
+            />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/ll_buy_baground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/button_horizontal_margin"
+                        android:contentDescription="@string/image_description"
+                        android:src="@drawable/icon_buy" />
+
+                    <CheckedTextView
+                        android:id="@+id/ct_comment_want_buy"
+                        style="@style/TvStyleDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="@string/str_goto_buy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/h4" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

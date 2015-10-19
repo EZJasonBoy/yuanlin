@@ -1,0 +1,12 @@
+<resources>
+ <dimen name="mystory_editorordel_fotter_height">50dp</dimen>
+ <dimen name="mystory_editorordel_fotter_line_below">49dp</dimen>
+ <dimen name="h5">10sp</dimen>
+ <dimen name="face_top">153dp</dimen>
+ <!-- 个人信息vip等级绿色矩形画的距离 -->
+ <dimen name="per_info_vip_precent_start_x">2dip</dimen>
+ <dimen name="per_info_vip_precent_start_y">2dip</dimen>
+ <dimen name="per_info_vip_precent_end_y">4dip</dimen>
+ <dimen name="activity_editext_top">180dp</dimen>
+ <dimen name="enter_number_height">128dp</dimen>
+</resources>

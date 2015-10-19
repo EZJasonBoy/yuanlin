@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="afterDescendants" >
+
+    <TextView
+        android:id="@+id/chatitem_tv_time"
+        style="@style/chatitem_timestyle" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chatitem_tv_time" >
+
+        <ImageView
+            android:id="@+id/iv_photoimage"
+            style="@style/headphoto_style"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            style="@style/msg_relative_style"
+            android:layout_alignTop="@id/iv_photoimage"
+            android:layout_toLeftOf="@+id/iv_photoimage" >
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:layout_alignRight="@id/voice_body"
+                android:layout_marginBottom="@dimen/nametophoto_margin"
+                android:text="i am name"
+                android:textSize="@dimen/nickname_font_size" />
+
+            <ImageView
+                android:id="@+id/voice_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:background="@drawable/chat_sender_bg"
+                android:src="@drawable/chatto_voice_playing"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

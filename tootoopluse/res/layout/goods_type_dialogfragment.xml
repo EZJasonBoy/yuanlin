@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100" >
+
+    <LinearLayout
+        android:id="@+id/goods_strategy_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:orientation="horizontal" >
+
+        <!-- 空 -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="55"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="220" >
+
+        <LinearLayout
+            android:id="@+id/ll_cata_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="@color/gray_btn_baground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+
+            <CheckedTextView
+                style="@style/TvStyleDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="商品分类 (必填)"
+                android:drawablePadding="@dimen/button_horizontal_margin"
+                android:drawableLeft="@drawable/icon_categray_recommend"
+                android:textSize="@dimen/h0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_selector"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/ll_main"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                 >
+                <com.ninetowns.tootoopluse.helper.ExpandTabViewHelper
+                    android:id="@+id/expand_tab"
+                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    ></com.ninetowns.tootoopluse.helper.ExpandTabViewHelper>
+                    
+                    
+              
+            </RelativeLayout>
+
+         
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_net_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="@color/gray_btn_baground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+        
+
+            <CheckedTextView
+                style="@style/TvStyleDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/button_horizontal_margin"
+                android:drawableLeft="@drawable/icon_link"
+                android:textSize="@dimen/h0"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="导购链接 (选填)" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_net_url"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="240" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="180"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingTop="@dimen/activity_vertical_margin" >
+
+                <EditText
+                    android:id="@+id/et_getshoppingurl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_gray_backgroud" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/iv_look_internet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/look_internet" >
+                </ImageView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="@color/gray_btn_baground"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:id="@+id/ll_push"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:background="@drawable/btn_ok"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/tv_push"
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发布"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/h2" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dismiss"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="45"
+        android:background="@color/halftransparent"
+        android:orientation="horizontal" >
+
+        <!-- 空 -->
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <!-- 我被邀请 -->
+
+        <LinearLayout
+            android:id="@+id/ll_iwasinvitde"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/activity_margin_grey"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:text="@string/iaminvited"
+                android:textSize="@dimen/h1" />
+
+            <EditText
+                android:id="@+id/myivitation_et_invitationcode"
+                style="@style/myinvitation_edit_style"
+                android:drawableLeft="@drawable/icon_invitationcode"
+                android:hint="@string/invitation_code" />
+
+            <EditText
+                android:id="@+id/myivitation_et_mobilenum"
+                style="@style/myinvitation_edit_style"
+                android:drawableLeft="@drawable/icon_mobile"
+                android:hint="@string/mobilenum" />
+
+            <EditText
+                android:id="@+id/myivitation_et_vertifycode"
+                style="@style/myinvitation_edit_style"
+                android:drawableLeft="@drawable/icon_vertifycode"
+                android:hint="@string/vertifycode" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/myinvitation_tv_vertifycode"
+                    style="@style/halfwidth_myinvitation_edit_style"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/myinvitation_vertifycode_et_bg"
+                    android:text="@string/get_vertifycode"
+                    android:textSize="@dimen/h1" />
+
+                <TextView
+                    android:id="@+id/myinvitation_tv_commit"
+                    style="@style/halfwidth_myinvitation_edit_style"
+                    android:background="@drawable/myinvitation_commit_et_bg"
+                    android:text="@string/commit"
+                    android:textSize="@dimen/h1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 我要邀请 -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/activity_margin_grey"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="@string/iwillinvitation"
+            android:textSize="@dimen/h1" />
+
+        <TextView
+            android:id="@+id/myinvitation_tv_myinvitation"
+            style="@style/myinvitation_edit_style"
+            android:drawableLeft="@drawable/icon_invitationcode"
+            android:gravity="center_vertical"
+            android:textColor="@color/activity_margin_grey" />
+
+        <TextView
+            android:id="@+id/myinvitation_tv_iwillinvite"
+            style="@style/myinvitation_edit_style"
+            android:background="@drawable/myinvitation_commit_et_bg"
+            android:gravity="center"
+            android:text="我要邀请"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/activity_margin_grey"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="@string/invitation_success"
+            android:textSize="@dimen/h1" />
+
+        <!-- 邀请列表 -->
+
+        <com.ninetowns.ui.widget.MyGridView
+            android:id="@+id/myinvitation_gridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="4"
+            android:padding="8dp"
+            android:stretchMode="columnWidth" >
+        </com.ninetowns.ui.widget.MyGridView>
+        <!--
+        <GridView
+            android:id="@+id/myinvitation_gridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:numColumns="auto_fit"
+            android:background="@color/black"
+            android:stretchMode="spacingWidth" >
+        </GridView>        -->
+
+        <TextView
+            android:id="@+id/myinvitation_tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/invitation_success"
+            android:textColor="#757575"
+            android:textSize="@dimen/h1" />
+    </LinearLayout>
+
+</ScrollView>

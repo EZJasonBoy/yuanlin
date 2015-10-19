@@ -1,0 +1,19 @@
+# view res/layout/arc_menu.xml #generated:4
+-keep class com.capricorn.ArcLayout { <init>(...); }
+
+# view res/layout/ray_menu.xml #generated:4
+-keep class com.capricorn.RayLayout { <init>(...); }
+
+# view res/layout/time_picker.xml #generated:13
+# view res/layout/time_picker.xml #generated:19
+# view res/layout/time_picker.xml #generated:25
+# view res/layout/time_picker.xml #generated:31
+# view res/layout/time_picker.xml #generated:7
+-keep class com.ninetowns.ui.widget.WheelView { <init>(...); }
+
+# view res/layout/arc_menu_arc_menu.xml #generated:4
+-keep class com.ninetowns.ui.widget.arcmenu.ArcLayout { <init>(...); }
+
+# view res/layout/arc_menu_ray_menu.xml #generated:4
+-keep class com.ninetowns.ui.widget.arcmenu.RayLayout { <init>(...); }
+

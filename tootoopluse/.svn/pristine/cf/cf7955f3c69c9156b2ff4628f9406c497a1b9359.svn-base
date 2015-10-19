@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+
+    <include
+    layout="@layout/two_or_one_btn_head"/>
+    
+	<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        
+        <TextView
+        android:id="@+id/ch_pwd_old_pwd_tv"
+        android:layout_alignLeft="@+id/ch_pwd_old_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/change_pwd_old_pwd"
+        android:singleLine="true"
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/h3"/>
+        
+        <EditText
+        android:id="@+id/ch_pwd_old_pwd"
+        android:layout_below="@id/ch_pwd_old_pwd_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mobile_login_pwd_hint"
+        android:singleLine="true"
+        android:password="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="@dimen/login_register_left_right_margin"
+        android:layout_marginRight="@dimen/login_register_left_right_margin"
+        android:background="@drawable/login_register_pwd_et_drawable"
+        android:maxLength="17"
+        android:textSize="@dimen/h3"/>
+        
+        <TextView
+        android:id="@+id/ch_pwd_new_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ch_pwd_old_pwd"
+        android:layout_alignLeft="@+id/ch_pwd_old_pwd"
+        android:text="@string/change_pwd_new_pwd"
+        android:singleLine="true"
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/h3"/>
+        
+        <EditText
+        android:id="@+id/ch_pwd_new_pwd"
+        android:layout_below="@id/ch_pwd_new_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mobile_register_pwd_hint"
+        android:singleLine="true"
+        android:password="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_register_pwd_et_drawable"
+        android:layout_marginLeft="@dimen/login_register_left_right_margin"
+        android:layout_marginRight="@dimen/login_register_left_right_margin"
+        android:maxLength="17"
+        android:textSize="@dimen/h3"/>
+        
+        <TextView
+        android:id="@+id/ch_pwd_new_tv_again"
+        android:layout_width="match_parent"
+        android:layout_below="@id/ch_pwd_new_pwd"
+        android:layout_alignLeft="@+id/ch_pwd_old_pwd"
+        android:layout_height="wrap_content"
+        android:text="@string/change_pwd_sure_new_pwd"
+        android:singleLine="true"
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/h3"/>
+        
+        <EditText
+        android:id="@+id/ch_pwd_sure_new_pwd"
+        android:layout_below="@id/ch_pwd_new_tv_again"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mobile_register_pwd_hint"
+        android:singleLine="true"
+        android:password="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="@dimen/login_register_left_right_margin"
+        android:layout_marginRight="@dimen/login_register_left_right_margin"
+        android:background="@drawable/login_register_pwd_et_drawable"
+        android:maxLength="17"
+        android:textSize="@dimen/h3"/>
+	    
+	    
+	    <TextView
+	    android:id="@+id/ch_pwd_submit_btn"
+	    android:layout_below="@id/ch_pwd_sure_new_pwd"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="15dp"
+	    android:background="@drawable/btn_change_pwd_submit"
+	    android:gravity="center"
+	    android:layout_marginLeft="@dimen/login_register_left_right_margin"
+    	android:layout_marginRight="@dimen/login_register_left_right_margin"
+	    android:layout_gravity="center_horizontal"
+	    android:textColor="@color/white"
+	    android:text="@string/change_pwd_submit"
+	    android:textSize="@dimen/h3"/>       
+        
+    </RelativeLayout>
+    
+</LinearLayout>

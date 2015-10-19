@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+          style="@style/TitleStyle"
+        
+        >
+        
+         <ImageView
+        android:id="@+id/iv_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:src="@drawable/btn_return_gray" />
+
+    <ImageView
+        android:id="@+id/iv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:src="@drawable/btn_start" />
+
+    <ImageView
+        android:id="@+id/iv_right_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/button_horizontal_margin"
+        android:layout_toLeftOf="@+id/iv_right"
+        android:src="@drawable/btn_keep" />
+
+    <CheckedTextView
+        android:id="@+id/ct_middle"
+        style="@style/ChTextStyleDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+        
+    </RelativeLayout>
+
+   
+
+    <View
+        style="@style/LineStyle"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

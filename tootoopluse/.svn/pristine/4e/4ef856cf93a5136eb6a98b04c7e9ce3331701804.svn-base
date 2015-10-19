@@ -1,0 +1,77 @@
+package com.ninetowns.tootoopluse.fragment;
+
+import java.util.List;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.ninetowns.library.net.RequestParamsNet;
+import com.ninetowns.tootoopluse.R;
+import com.ninetowns.tootoopluse.adapter.MyConstanctAdapter;
+import com.ninetowns.tootoopluse.bean.MyConstanctBean;
+import com.ninetowns.tootoopluse.helper.ConstantsTooTooEHelper;
+import com.ninetowns.tootoopluse.helper.TootooeNetApiUrlHelper;
+import com.ninetowns.tootoopluse.parser.MyConstanctMemGroupParser;
+import com.ninetowns.ui.fragment.BaseFragment;
+
+public class MyConstanctFragment extends BaseFragment<List<MyConstanctBean>,MyConstanctMemGroupParser>{
+private String act_id="";
+
+@ViewInject(R.id.two_or_one_btn_head_title)
+private TextView mTvHeader;
+@ViewInject(R.id.two_or_one_btn_head_back)
+private LinearLayout mLLBack;
+@ViewInject(R.id.address_fragment_lv)
+private ListView mListView;
+
+
+
+@Override
+public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		Bundle savedInstanceState) {
+	View view = inflater.inflate(R.layout.address_list_fragment, null);
+	ViewUtils.inject(this,view);
+	mTvHeader.setText("联系方式");
+	return view;
+}
+@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		super.onLoadData(true, true, true);
+	}
+	@Override
+	public MyConstanctMemGroupParser setParser(String str) {
+		return new MyConstanctMemGroupParser(str);
+	}
+
+@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		act_id = getActivity().getIntent().getStringExtra(TootooeNetApiUrlHelper.ACTIVITYID);
+	}
+	@Override
+	public RequestParamsNet getApiParmars() {
+		RequestParamsNet par=new RequestParamsNet();
+		par.setmStrHttpApi(TootooeNetApiUrlHelper.GET_BIG_EAT_CONSTANCT);
+		par.addQueryStringParameter(ConstantsTooTooEHelper.ACTIVITYID, act_id);
+		return par;
+	}
+
+	@Override
+	public void getParserResult(List<MyConstanctBean> parserResult) {
+		if(parserResult!=null&&parserResult.size()>0){
+			MyConstanctAdapter adapter=new MyConstanctAdapter(parserResult);
+			mListView.setAdapter(adapter);
+			adapter.notifyDataSetChanged();
+		}
+		
+	}
+
+}

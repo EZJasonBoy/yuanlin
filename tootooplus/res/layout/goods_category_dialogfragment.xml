@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_category_dismiss"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100" >
+
+    <LinearLayout
+        android:id="@+id/goods_strategy_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/transparent"
+        android:orientation="horizontal" >
+
+        <!-- 空 -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="330" >
+
+        <LinearLayout
+            android:id="@+id/ll_cata_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <CheckedTextView
+                style="@style/TvStyleDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:drawableLeft="@drawable/classify_image"
+                android:drawablePadding="@dimen/button_horizontal_margin"
+                android:text="分类筛选"
+                android:textSize="@dimen/h1" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@color/app_bg_color" />
+
+        <LinearLayout
+            android:id="@+id/ll_selector"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <com.ninetowns.tootooplus.helper.ExpandTabViewHelper
+                android:id="@+id/expand_tab_helper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/detail_arrow_size" />
+
+            <!--
+                 <CheckedTextView
+                android:id="@+id/cv_all_category"
+                style="@style/TvStyleDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/detail_arrow_size"
+                android:drawablePadding="@dimen/button_horizontal_margin"
+                android:drawableRight="@drawable/all_classify_image"
+                android:text="全部分类"
+                android:textSize="@dimen/h3" />
+            -->
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="80"
+            android:background="@color/gray_btn_baground"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:weightSum="5" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_weight="2"
+                android:gravity="center_vertical" >
+
+                <CheckedTextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/puser_image"
+                    android:drawablePadding="@dimen/button_horizontal_margin"
+                    android:text="发布者身份"
+                    android:textSize="@dimen/h1" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@color/gray_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <RadioGroup
+                    android:id="@+id/rg_tab_user"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/detail_arrow_size"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rb_tab_seller"
+                        style="@style/HomeTabButtonStyle"
+                        android:drawableTop="@null"
+                        android:gravity="left|center_vertical"
+                        android:text="商家" />
+
+                    <RadioButton
+                        android:id="@+id/rb_tab_mine"
+                        style="@style/HomeTabButtonStyle"
+                        android:drawableTop="@null"
+                        android:gravity="left|center_vertical"
+                        android:text="个人" />
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="240" >
+
+            <CheckedTextView
+                style="@style/TvStyleDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:drawableLeft="@drawable/sort_image"
+                android:drawablePadding="@dimen/button_horizontal_margin"
+                android:text="排序方式"
+                android:textSize="@dimen/h1" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@color/gray_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <RadioGroup
+                android:id="@+id/rg_story"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/detail_arrow_size"
+                android:layout_weight="60"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/rb_tab_new"
+                    style="@style/HomeTabButtonStyle"
+                    android:checked="true"
+                    android:drawableTop="@null"
+                    android:gravity="left|center_vertical"
+                    android:text="最新" />
+
+                <RadioButton
+                    android:id="@+id/rb_tab_hot"
+                    style="@style/HomeTabButtonStyle"
+                    android:drawableTop="@null"
+                    android:gravity="left|center_vertical"
+                    android:text="最热" />
+
+                <RadioButton
+                    android:id="@+id/rb_tab_recommend"
+                    style="@style/HomeTabButtonStyle"
+                    android:drawableTop="@null"
+                    android:gravity="left|center_vertical"
+                    android:text="推荐" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="80"
+            android:background="@color/gray_btn_baground"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <LinearLayout
+                android:id="@+id/ll_cancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/subtab_height"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_weight="38"
+                android:background="@drawable/btn_round_gray_backgroud"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="取消"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_sure"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/subtab_height"
+                android:layout_weight="38"
+                android:background="@drawable/btn_round_org_backgroud"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="确定"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- 空 -->
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+</LinearLayout>

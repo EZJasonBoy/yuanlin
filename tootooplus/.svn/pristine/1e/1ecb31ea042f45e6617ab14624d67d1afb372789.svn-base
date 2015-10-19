@@ -1,0 +1,92 @@
+package com.ninetowns.tootooplus.parser;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.ninetowns.library.parser.AbsParser;
+import com.ninetowns.tootooplus.bean.JoinMemberBean;
+
+public class JoinMemberParser extends AbsParser<List<JoinMemberBean>> {
+	
+	private String Authority;
+
+	public JoinMemberParser(String str) {
+		super(str);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public void setAuthority(String Authority){
+		this.Authority = Authority;
+	}
+	
+	public String getAuthority(){
+		return Authority;
+	}
+
+	@Override
+	public List<JoinMemberBean> getParseResult(String netStr) {
+		// TODO Auto-generated method stub
+		List<JoinMemberBean> members = new ArrayList<JoinMemberBean>();
+		try {
+			JSONObject jsonObj = new JSONObject(netStr);
+			if(jsonObj.has("Status") && jsonObj.getString("Status").equals("1")){
+	            if(jsonObj.has("Data")){
+	            	JSONObject jsonData = jsonObj.getJSONObject("Data");
+	            	if(jsonData.has("List")){
+	            		JSONArray jsonList = jsonData.getJSONArray("List");
+	            		for(int i = 0; i < jsonList.length(); i++) {
+	            			JoinMemberBean joinMemberBean = new JoinMemberBean();
+	            			JSONObject jsonItem = jsonList.getJSONObject(i);
+	            			if(jsonItem.has("GroupMemberId")){
+	            				joinMemberBean.setGroupMemberId(jsonItem.getString("GroupMemberId"));
+	            			}
+	            			
+	            			if(jsonItem.has("GroupId")){
+	            				joinMemberBean.setGroupId(jsonItem.getString("GroupId"));
+	            			}
+	            			
+	            			if(jsonItem.has("IsAdmin")){
+	            				joinMemberBean.setIsAdmin(jsonItem.getString("IsAdmin"));
+	            			}
+	            			
+	            			if(jsonItem.has("UserId")){
+	            				joinMemberBean.setUserId(jsonItem.getString("UserId"));
+	            			}
+	            			
+	            			if(jsonItem.has("UserName")){
+	            				joinMemberBean.setUserName(jsonItem.getString("UserName"));
+	            			}
+	            			
+	            			if(jsonItem.has("LogoUrl")){
+	            				joinMemberBean.setLogoUrl(jsonItem.getString("LogoUrl"));
+	            			}
+	            			
+	            			if(jsonItem.has("UserGrade")){
+	            				joinMemberBean.setUserGrade(jsonItem.getString("UserGrade"));
+	            			}
+	            			
+	            			if(jsonItem.has("BusinessStatus")){
+	            				joinMemberBean.setBusinessStatus(jsonItem.getString("BusinessStatus"));
+	            			}
+	            			
+	            			members.add(joinMemberBean);
+	            		}
+	            	}
+	            	
+	            	if(jsonData.has("Authority")){
+	                 	setAuthority(jsonData.getString("Authority"));
+	                 }
+	            }
+			}
+		}catch(JSONException e){
+			e.printStackTrace();
+		}
+		return members;
+	}
+
+}

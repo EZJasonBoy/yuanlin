@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" >
+	
+	<include
+	layout="@layout/two_or_one_btn_head"/>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+        <EditText
+        android:id="@+id/mobile_register_mobile_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mobile_login_num_hint"
+        android:singleLine="true"
+        android:background="@drawable/login_mobile_et_drawable"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="@dimen/login_register_left_right_margin"
+        android:layout_marginRight="@dimen/login_register_left_right_margin"
+        android:maxLength="12"
+        android:inputType="phone"
+        android:textSize="@dimen/h3"/>
+        
+	</LinearLayout>    
+    <TextView
+    android:id="@+id/mobile_register_next_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text="@string/mobile_register_next_btn"
+    android:background="@drawable/btn_mobile_login_btn"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="@dimen/login_register_left_right_margin"
+    android:layout_marginRight="@dimen/login_register_left_right_margin"
+    android:gravity="center"
+    android:textColor="@color/white"
+    android:textSize="@dimen/h3"/>
+
+</LinearLayout>

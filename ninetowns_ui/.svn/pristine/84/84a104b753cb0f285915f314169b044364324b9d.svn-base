@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#000000</color>
+    <color name="black_content_title">#262626</color>
+    <color name="black_content">#232323</color>
+    <color name="text_black">#797979</color>
+    <color name="white">#FFFFFF</color>
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <!-- 半透明 -->
+    <color name="halftransparent">#b0000000</color>
+    <color name="line_transtparent">#c0000000</color>
+
+    <!-- 头部标题背景颜色 -->
+    <color name="title_bg">#f8f9fb</color>
+
+    <!-- 头部标题阴影线颜色 -->
+    <color name="title_hor_line">#d0d1d4</color>
+    <color name="theme_blue">#47bcc6</color>
+    <color name="red">#f33c12</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="homepage_actionbar_bg">#00000000</color>
+    <color name="msg_selected_bg">#60646f</color>
+    <color name="progress_background">#f33c12</color>
+    <color name="chatroom_time_bg">#bfbfbf</color>
+    <!-- 主题背景色 -->
+    <color name="app_bg_color">#eeeeee</color>
+    <color name="bg_new_add_address_btn_color">#64FFFFFF</color>
+    <color name="login_forget_pwd_text_color">#304c62</color>
+    <color name="edittext_line_color">#bebebe</color>
+
+    <!-- 支付需要的颜色 -->
+    <color name="alipay_dialog_tiltle_blue">#2277BB</color>
+    <!-- end 支付 -->
+
+    <color name="buy_tactics_light_black_color">#c8000000</color>
+    <color name="bg_use_voucher_color">#515151</color>
+    <color name="voucher_et_hint_color">#b1aaaa</color>
+    <color name="order_details_change_color">#0000E3</color>
+    
+    <color name="vip_pro_dark_green_color">#0fa300</color>
+	<color name="vip_pro_light_green_color">#0fe60a</color>
+        <!-- 主页蒙层 -->
+        <color name="grid_item_novel_press">#aff08b00</color>
+    <color name="light_transparent_layer_edit_color">#80000000</color>
+    <color name="light_transparent_layer_color">#00000000</color>
+    <color name="night_transparent_layer_color">#33000000</color>
+    <color name="night_transparent_layer_edit_color">#80000000</color>
+    <color name="grid_item_novel">#aff08b00</color>
+    <color name="clip_view_dark_color">#aa000000</color>
+    <color name="default_edgeeffect_color">#FF33B5E5</color>
+</resources>

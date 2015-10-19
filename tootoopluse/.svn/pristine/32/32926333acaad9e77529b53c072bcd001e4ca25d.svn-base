@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/rec_bot_popup_total_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_menu"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="@drawable/bg_white_corners_shape_drawable"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/rec_bot_popup_internet_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/create_wish_internet"
+                    android:textColor="@color/red" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/v_rec_video"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:visibility="gone"
+                android:background="@color/title_hor_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_video"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_rec_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/create_wish_video"
+                    android:textColor="@color/red" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/rec_bot_popup_internet_line"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/title_hor_line" />
+
+            <LinearLayout
+                android:id="@+id/rec_bot_popup_camera_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/rec_bot_popup_camera_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/info_upload_camera"
+                    android:textColor="@color/red" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/title_hor_line" />
+ <LinearLayout
+                android:id="@+id/rec_bot_popup_text_second_title"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                 android:visibility="gone"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_second_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/second_title"
+                    android:textColor="@color/red" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/v_line_second_title"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:visibility="gone"
+                android:background="@color/title_hor_line" />
+            <LinearLayout
+                android:id="@+id/rec_bot_popup_local_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/rec_bot_popup_local_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/album_photo_title"
+                    android:textColor="@color/red" />
+            </LinearLayout>
+             <View
+                 android:id="@+id/v_line_gaoliang"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                 android:visibility="gone"
+                android:background="@color/title_hor_line" />
+            <LinearLayout
+                android:id="@+id/rec_bot_popup_local_gaoliang"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                 android:visibility="gone"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_rec_bot_popup_local_gaoliang"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/album_photo_title_gaoliang"
+                    android:textColor="@color/red" />
+            </LinearLayout>
+        </LinearLayout>
+   
+        <LinearLayout
+            android:id="@+id/rec_bot_popup_cancel_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_white_corners_shape_drawable"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/rainbo_cancel" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

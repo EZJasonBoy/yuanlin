@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="setting_list_data">
+        <item >@string/vision</item>
+        <item >@string/checkupdate</item>
+        <item >@string/feedback</item>
+        <item >@string/str_kefu</item>
+        <!--  <item >@string/str_kefu</item> 这一条是客服 -->
+        <item >@string/clearcache</item>
+        <item >@string/help</item>
+        <item >@string/aboutus</item>
+    </string-array>
+    
+</resources>

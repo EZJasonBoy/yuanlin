@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_title_fotter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black" >
+
+    <include
+        android:id="@+id/ic_play"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/surface_view" />
+
+    <ImageView
+        android:id="@+id/iv_surface_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="false"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:id="@+id/rl_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/background_top_grey" >
+
+        <ImageView
+            android:id="@+id/iv_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp" />
+
+        <TextView
+            android:id="@+id/has_played"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="top"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@+id/iv_play"
+            android:singleLine="true"
+            android:text="19:00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h4" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/duration"
+            android:layout_toRightOf="@+id/has_played"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:maxHeight="10dp"
+            android:minHeight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:progress="0"
+            android:paddingTop="0dp"
+            android:progressDrawable="@drawable/bg_bar"
+            android:thumb="@drawable/thumb_bar"
+            android:thumbOffset="0dp"
+           />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="top"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@+id/btn_voice"
+            android:singleLine="true"
+            android:text="10:00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h4" />
+
+        <ImageView
+            android:id="@+id/btn_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btn_big" />
+
+        <ImageView
+            android:id="@+id/btn_big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/btn_full"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</merge>

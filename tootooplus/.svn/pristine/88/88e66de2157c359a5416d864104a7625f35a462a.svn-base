@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+    <include
+    layout="@layout/two_or_one_btn_head"/>
+    
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/bg_white_shape_drawable"
+    android:orientation="vertical">
+        <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="5dp"
+	    android:layout_marginBottom="3dp"
+	    android:orientation="horizontal">
+	        <TextView
+	        android:layout_width="0dp"
+	        android:layout_weight="1.5"
+	        android:layout_height="wrap_content"
+	        android:gravity="right"
+	        android:text="@string/delivery_item_name"
+	        android:textSize="@dimen/h3"/>
+	       	<EditText
+	       	android:id="@+id/delivery_add_name_et"
+	       	android:layout_width="0dp"
+	        android:layout_weight="3.8"
+			android:layout_height="wrap_content"
+			android:hint="@string/delivery_add_name_hint"
+			android:singleLine="true"
+			android:textSize="@dimen/h3"/>
+	        
+	    </LinearLayout>
+	    
+	    
+	    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="5dp"
+	    android:orientation="horizontal">
+	        <TextView
+	        android:layout_width="0dp"
+	        android:layout_weight="1.5"
+	        android:layout_height="wrap_content"
+	        android:gravity="right"
+	        android:text="@string/delivery_item_mobile_num"
+	        android:textSize="@dimen/h3"/>
+	       	<EditText
+	       	android:id="@+id/delivery_add_mobile_et"
+	       	android:layout_width="0dp"
+	        android:layout_weight="3.8"
+			android:layout_height="wrap_content"
+			android:singleLine="true"
+			android:hint="@string/delivery_add_mobile_hint"
+			android:textSize="@dimen/h3"/>
+	        
+	    </LinearLayout>
+	
+	     <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="5dp"
+	    android:orientation="horizontal">
+	        <TextView
+	        android:layout_width="0dp"
+	        android:layout_weight="1.5"
+	        android:layout_height="wrap_content"
+	        android:gravity="right"
+	        android:text="@string/delivery_add_province_hint"
+	        android:textSize="@dimen/h3"/>
+	        <LinearLayout
+	        android:layout_width="0dp"
+	        android:layout_weight="3.8"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal">
+	            <Spinner
+	            android:id="@+id/delivery_add_province"
+	            android:layout_width="match_parent"
+	            android:layout_height="@dimen/add_address_spinner_default_height"/>
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+	    
+	     <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="5dp"
+	    android:orientation="horizontal">
+	        <TextView
+	        android:layout_width="0dp"
+	        android:layout_weight="1.5"
+	        android:layout_height="wrap_content"
+	        android:gravity="right"
+	        android:text="@string/delivery_add_city_hint"
+	        android:textSize="@dimen/h3"/>
+	        <LinearLayout
+	        android:layout_width="0dp"
+	        android:layout_weight="3.8"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal">
+	            <Spinner
+	            android:id="@+id/delivery_add_city"
+	            android:layout_width="match_parent"
+	            android:layout_height="@dimen/add_address_spinner_default_height"/>
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+	     
+	     
+	     <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="5dp"
+	    android:orientation="horizontal">
+	        <TextView
+	        android:layout_width="0dp"
+	        android:layout_weight="1.5"
+	        android:layout_height="wrap_content"
+	        android:gravity="right"
+	        android:text="@string/delivery_add_district_hint"
+	        android:textSize="@dimen/h3"/>
+	        <LinearLayout
+	        android:layout_width="0dp"
+	        android:layout_weight="3.8"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal">
+	            <!-- 
+	            <Spinner
+	            android:id="@+id/delivery_add_province"
+	            android:layout_width="wrap_content"
+	            android:layout_height="@dimen/add_address_spinner_default_height"/>
+	            <Spinner
+	            android:id="@+id/delivery_add_city"
+	            android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:layout_height="@dimen/add_address_spinner_default_height"/>
+	            -->
+	            <Spinner
+	            android:id="@+id/delivery_add_district"
+	            android:layout_width="match_parent"
+	            android:layout_height="@dimen/add_address_spinner_default_height"/>
+	             
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+	    
+	    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="5dp"
+	    android:orientation="horizontal">
+	        <TextView
+	        android:layout_width="0dp"
+	        android:layout_weight="1.5"
+	        android:layout_height="wrap_content"
+	        android:gravity="right"
+	        android:text="@string/delivery_item_address"
+	        android:textSize="@dimen/h3"/>
+	         
+	        <EditText
+	       	android:id="@+id/delivery_add_details"
+	       	android:layout_width="0dp"
+	        android:layout_weight="3.8"
+			android:layout_height="wrap_content"
+			android:hint="@string/delivery_add_details_hint"
+			android:textSize="@dimen/h3"/>
+	    </LinearLayout>
+	    
+	    
+	    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginTop="5dp"
+	    android:orientation="horizontal">
+	        <TextView
+	        android:layout_width="0dp"
+	        android:layout_weight="1.5"
+	        android:layout_height="wrap_content"
+	        android:gravity="right"
+	        android:text="@string/delivery_item_zip_code"
+	        android:textSize="@dimen/h3"/>
+	       	<EditText
+	       	android:id="@+id/delivery_add_zip_code"
+	       	android:layout_width="0dp"
+	        android:layout_weight="3.8"
+	        android:singleLine="true"
+			android:layout_height="wrap_content"
+			android:textSize="@dimen/h3"/>
+	        
+	    </LinearLayout>
+	    
+	    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="10dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginTop="5dp"
+	    android:layout_marginBottom="10dp"
+	    android:orientation="horizontal">
+	        <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/delivery_need_look"
+	        android:textColor="@color/btn_org_color"
+	        android:textSize="@dimen/h3"/>
+	        
+	    </LinearLayout>
+    </LinearLayout>
+    
+</LinearLayout>

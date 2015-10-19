@@ -1,0 +1,151 @@
+package com.ninetowns.tootoopluse.fragment;
+
+
+import java.io.File;
+import java.util.ArrayDeque;
+import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.Executor;
+
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.ninetowns.tootoopluse.R;
+import com.ninetowns.tootoopluse.helper.HttpChMultipartPostHelper;
+import com.ninetowns.tootoopluse.helper.ImageChHttpMultipartPostHelpter;
+import com.ninetowns.tootoopluse.helper.ImageHttpMultipartPostHelper;
+import com.ninetowns.tootoopluse.helper.TootooeNetApiUrlHelper;
+import com.ninetowns.tootoopluse.util.CommonUtil;
+import com.ninetowns.ui.widget.dialog.BaseFragmentDialog;
+
+/**
+ * 
+* @Title: UpLoadViewDialogFragment.java  
+* @Description: 上传的dialog  防止后期修改dialog 进度条 
+* @author wuyulong
+* @date 2015-1-8 上午10:55:24  
+* @version V1.0
+ */
+public class UpLoadViewDialogFragment extends BaseFragmentDialog {
+    public List<File> listFile;
+    private Handler handler;
+    private HashMap<String, String> map;
+    private String type="";
+    private File imageThumb;
+    private File upfile;
+    private Bundle bundle;
+    private String scenarioType;
+    public UpLoadViewDialogFragment() {
+		// TODO Auto-generated constructor stub
+	}
+    public UpLoadViewDialogFragment(List<File> listFile,Handler handler, HashMap<String, String> map,Bundle bundle) {
+        this.listFile=listFile;
+        this.handler=handler;
+        this.map=map;
+        this.bundle=bundle;
+        type=map.get(TootooeNetApiUrlHelper.UPLOAD_FIRLE_TYPE);
+        scenarioType= map.get(TootooeNetApiUrlHelper.ScenarioType);
+    }
+    public UpLoadViewDialogFragment(List<File> listFile,Handler handler, HashMap<String, String> map) {
+        this.listFile=listFile;
+        this.handler=handler;
+        this.map=map;
+        type=map.get(TootooeNetApiUrlHelper.UPLOAD_FIRLE_TYPE);
+        scenarioType= map.get(TootooeNetApiUrlHelper.ScenarioType);
+    }
+    public UpLoadViewDialogFragment(File imageThumb,File upfile, HashMap<String, String> map,Handler hander) {
+        this.map=map;
+        this.handler=hander;
+        type=map.get(TootooeNetApiUrlHelper.UPLOAD_FIRLE_TYPE);
+        this.imageThumb=imageThumb;
+        scenarioType= map.get(TootooeNetApiUrlHelper.ScenarioType);
+        this.upfile=upfile;
+    }
+    public UpLoadViewDialogFragment(File imageThumb,File upfile, HashMap<String, String> map,Handler hander,Bundle bundle) {
+        this.map=map;
+        this.handler=hander;
+        this.bundle=bundle;
+        type=map.get(TootooeNetApiUrlHelper.UPLOAD_FIRLE_TYPE);
+        this.imageThumb=imageThumb;
+        scenarioType= map.get(TootooeNetApiUrlHelper.ScenarioType);
+        this.upfile=upfile;
+    }
+    
+
+
+
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+		View view = inflater.inflate(R.layout.upload_view, null);
+		upload();
+		return view;
+		
+	}
+	/**
+	 * 
+	* @Title: UpLoadViewDialogFragment.java  
+	* @Description: 上传图片 
+	* @author wuyulong
+	* @date 2015-1-4 下午3:32:23  
+	* @param 
+	* @return void
+	 */
+    public void upload() {
+        if(!TextUtils.isEmpty(scenarioType)&&scenarioType.equals("4")){
+            ImageHttpMultipartPostHelper  multipartPost=new ImageHttpMultipartPostHelper(getActivity(),
+                        CommonUtil.appInterfaceUrl(TootooeNetApiUrlHelper.UPLOAD_RECDOMMMEND_FIRLE), listFile,
+                        map, handler,this);
+            multipartPost.execute();
+        }else{
+            if(type.equals("3")){
+                HttpChMultipartPostHelper uploadVieo = new HttpChMultipartPostHelper(getActivity(),  CommonUtil.appInterfaceUrl(TootooeNetApiUrlHelper.UPLOAD_RECDOMMMEND_FIRLE), imageThumb, upfile, map, handler,this,bundle);
+              uploadVieo.execute();
+            }else {
+                ImageChHttpMultipartPostHelpter uploadImages = new ImageChHttpMultipartPostHelpter(getActivity(),
+                		CommonUtil.appInterfaceUrl(TootooeNetApiUrlHelper.UPLOAD_RECDOMMMEND_FIRLE), listFile,
+                        map, handler,this,bundle);
+//                uploadImages.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+                uploadImages.executeOnExecutor(new SerialExecutor(uploadImages));
+            }
+        }
+      
+    }
+    private static class SerialExecutor implements Executor {
+    	private ImageHttpMultipartPostHelper uploadImages;
+    	@SuppressWarnings("unused")
+		public SerialExecutor(ImageHttpMultipartPostHelper uploadImages) {
+			// TODO Auto-generated constructor stub
+    		this.uploadImages=uploadImages;
+		}
+        final ArrayDeque<Runnable> mTasks = new ArrayDeque<Runnable>();
+        Runnable mActive;
+
+        public synchronized void execute(final Runnable r) {
+            mTasks.offer(new Runnable() {
+                public void run() {
+                    try {
+                        r.run();
+                    } finally {
+                        scheduleNext();
+                    }
+                }
+            });
+            if (mActive == null) {
+                scheduleNext();
+            }
+        }
+
+        @SuppressWarnings("static-access")
+		protected synchronized void scheduleNext() {
+            if ((mActive = mTasks.poll()) != null) {
+            	uploadImages.execute(mActive);
+            }
+        }
+    }
+}

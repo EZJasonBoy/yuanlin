@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_content"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/tab_height"
+    android:layout_alignParentBottom="true" >
+
+    <RadioGroup
+        android:id="@+id/rg_tab_bar"
+        style="@style/FotterStyle"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_tab_home_page"
+            style="@style/HomeTabButtonStyle"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:drawableTop="@drawable/home_selector"
+            android:text="@string/str_home_page" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_group_chat"
+            style="@style/HomeTabButtonStyle"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/chat_selector"
+            android:text="@string/str_group_chat" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_wish"
+            style="@style/HomeTabButtonStyle"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/wish_selector"
+            android:text="@string/str_wish" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_mine"
+            style="@style/HomeTabButtonStyle"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/mine_selector"
+            android:text="@string/str_mine" />
+    </RadioGroup>
+
+    <View style="@style/LineStyle" />
+
+</FrameLayout>

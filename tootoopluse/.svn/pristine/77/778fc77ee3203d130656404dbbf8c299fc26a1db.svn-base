@@ -1,0 +1,185 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="button_horizontal_margin">5dp</dimen>
+    <!-- home tab size -->
+    <dimen name="tab_padding_left">25dp</dimen>
+    <dimen name="tab_padding_right">25dp</dimen>
+    <dimen name="tab_padding_top">15dp</dimen>
+    <dimen name="tab_padding_bottom">5dp</dimen>
+    <!-- box padding -->
+    <dimen name="tab_padding_box_top">15dp</dimen>
+    <dimen name="tab_padding_box_left">15dp</dimen>
+    <dimen name="tab_padding_box_right">15dp</dimen>
+    <dimen name="tab_padding_box_bottom">15dp</dimen>
+
+    <!-- Common dimen defination -->
+    <dimen name="tab_height">60dp</dimen>
+    <dimen name="activity_photo_tab_height">75dp</dimen>
+    <dimen name="tab_height_divide">15dp</dimen>
+    <dimen name="tab_height_activity">45dp</dimen>
+    <dimen name="tab_height_down_line">68dp</dimen>
+    <dimen name="tab_item_hight1">63dp</dimen>
+    <dimen name="tab_item_hight_margin">82dp</dimen>
+    <dimen name="subtab_height">32dp</dimen>
+    <dimen name="title_bar_height">48dp</dimen>
+    <dimen name="fotter_tab_height">56dp</dimen>
+    <dimen name="title_one_height">58dp</dimen>
+    <dimen name="activity_info_item_height">42dp</dimen>
+    <dimen name="title_bar_height_recommend">32dp</dimen>
+    <dimen name="title_bar_btn_width">45dp</dimen>
+    <dimen name="edittext_height">51dp</dimen>
+    <dimen name="edittext_padding">11dp</dimen>
+    <dimen name="edittext_margin_vertical">8dp</dimen>
+    <dimen name="default_horizontal_margin">12dp</dimen>
+    <dimen name="default_vertical_large_margin">16dp</dimen>
+    <dimen name="default_vertical_margin">10dp</dimen>
+    <dimen name="default_horizontal_margin2">10dp</dimen>
+    <dimen name="default_horizontal_padding">10dp</dimen>
+    <dimen name="default_vertical_padding">10dp</dimen>
+    <dimen name="default_button_height">36dp</dimen>
+    <dimen name="list_divider_height">1dp</dimen>
+    <dimen name="listitem_default_height">61dp</dimen>
+    <dimen name="listitem_default_padding">5dp</dimen>
+    <dimen name="listitem_default_padding_vertical">5dp</dimen>
+    <dimen name="listitem_default_padding_horizontal">13dp</dimen>
+    <dimen name="listitem_default_image_size">51dp</dimen>
+    <dimen name="list_empty_icon_width">72dp</dimen>
+    <dimen name="list_empty_icon_height">72dp</dimen>
+    <dimen name="detail_name_height">35dp</dimen>
+    <dimen name="detail_item_height">33dp</dimen>
+    <dimen name="detail_item_padding_vertical">10dp</dimen>
+    <dimen name="detail_item_padding_horizontal">12dp</dimen>
+    <dimen name="detail_dotted_line_margin_horizontal">7dp</dimen>
+    <dimen name="detail_arrow_size">39dp</dimen>
+    <dimen name="detail_action_button_width">149dp</dimen>
+    <dimen name="video_msg_width">80dp</dimen>
+    <dimen name="video_msg_heighth">80dp</dimen>
+
+    <!-- 消息中的小黄点的位置 -->
+    <dimen name="dot_marginringh">20dp</dimen>
+    <dimen name="dot_margintop">7dp</dimen>
+    <!-- 登录注册 统一组建 长度 -->
+    <dimen name="componment_width">280dp</dimen>
+    <dimen name="refreshable_widget_indicator_right_padding">10dp</dimen>
+    <dimen name="refreshable_widget_indicator_corner_radius">12dp</dimen>
+    <dimen name="refreshable_widget_indicator_internal_padding">4dp</dimen>
+    <dimen name="refreshable_widget_header_footer_left_right_padding">25dp</dimen>
+    <dimen name="refreshable_widget_header_footer_top_bottom_padding">10dp</dimen>
+    <dimen name="refreshable_widget_header_footer_internal_padding">20dp</dimen>
+    <dimen name="moremenu_width">150dp</dimen>
+    <dimen name="headphoto_width">40dp</dimen>
+    <dimen name="headphoto_heighth">40dp</dimen>
+    <dimen name="head_width_height_bg">42dp</dimen>
+    <dimen name="big_headphoto_width">60dp</dimen>
+    <dimen name="big_headphoto_heighth">60dp</dimen>
+    <dimen name="recommend_photoheight">58dp</dimen>
+    <dimen name="recommend_photowidth">58dp</dimen>
+    <dimen name="groupchat_picture_width">96dp</dimen>
+    <dimen name="groupchat_picture_heighth">96dp</dimen>
+    <dimen name="line_heigth">0.5dp</dimen>
+    <dimen name="toplist_item_spacing">1dp</dimen>
+    <dimen name="iconcompoundText_widget_default_drawable_padding">1dp</dimen>
+
+    <!-- 我的故事中图片缩略图的高度 -->
+    <dimen name="my_story_list_pic_height">300dp</dimen>
+    <!-- 我的故事缩略图下方透明色的高度 -->
+    <dimen name="my_story_bottom_btn_height">50dp</dimen>
+
+    <!-- 上传图片选择页面的高度 -->
+    <dimen name="info_upload_layout_height">120dp</dimen>
+    <dimen name="info_album_pic_width_height">76dp</dimen>
+    <!-- 添加地址spinner控件的默认高度 -->
+    <dimen name="add_address_spinner_default_height">35dp</dimen>
+
+    <!-- 导航中的点到底部的距离 -->
+    <dimen name="loading_dot_bottom_margin">13dip</dimen>
+
+    <!-- 我的订单列表每个item高度 -->
+    <dimen name="my_order_item_order_bg_height">20dp</dimen>
+    <dimen name="my_order_item_pic_height">65dp</dimen>
+    <dimen name="order_detail_order_state_layout_height">35dp</dimen>
+    <dimen name="confirm_order_layout_height">42dp</dimen>
+    <dimen name="confirm_order_voucher_layout_height">114dp</dimen>
+    <dimen name="confirm_order_voucher_et_height">30dp</dimen>
+
+    <!-- 订单底部布局高度 -->
+    <dimen name="order_details_bottom_layout_height">48dp</dimen>
+
+    <!-- 登录相关的edittext开始输入字的距左边的距离 -->
+    <dimen name="login_et_paddingLeft">40dp</dimen>
+    <dimen name="margin_image">44px</dimen>
+    <dimen name="defautl_margin">11dp</dimen>
+    <dimen name="create_title_tap_hight">35dp</dimen>
+    <!-- 行间距 -->
+    <dimen name="line_space_height">5dp</dimen>
+
+    <!-- 购物车 -->
+    <dimen name="buy_tactics_item_height">45dp</dimen>
+    <dimen name="buy_tactics_item_light_bg_height">40dp</dimen>
+    <!-- 购物车end -->
+
+    <dimen name="msg_content_size">14sp</dimen>
+    <!-- 个人中心首行高度 -->
+    <dimen name="person_center_first_line_height">100dp</dimen>
+
+    <!-- 我的推荐故事的上面有一个阴影的高度 -->
+    <dimen name="my_story_top_height">34dp</dimen>
+    <dimen name="bottom_container">150dp</dimen>
+    <dimen name="photo_contailer">100dp</dimen>
+    <dimen name="recommend_pop_width">120dp</dimen>
+    <dimen name="photo_diment">45dp</dimen>
+    <dimen name="photo_diment_stroke">47dp</dimen>
+    <dimen name="fol_item_height">60dp</dimen>
+    <dimen name="tab_item_hight_top">72dp</dimen>
+    <!-- 用户昵称与头像的marge -->
+    <dimen name="nametophoto_margin">10dp</dimen>
+    <!-- 图片消息的宽度 -->
+    <dimen name="picture_msg_width">100dp</dimen>
+    <!-- 图片消息的高度 -->
+    <dimen name="picture_msg_heighth">100dp</dimen>
+    <dimen name="wish_bottom_height">115dp</dimen>
+    <dimen name="draft_bottom_height">67dp</dimen>
+    <dimen name="editext_margin_height">205dp</dimen>
+    <dimen name="activity_editext_top">200dp</dimen>
+    <dimen name="activity_edi_tep">144dp</dimen>
+    <dimen name="setting_item_height">52dp</dimen>
+
+    <!-- 聊天气泡的边距 -->
+    <dimen name="padding_chat_bubbleframe">13dp</dimen>
+    <dimen name="shop_cert_image_width">250dp</dimen>
+    <dimen name="shop_cert_image_height">200dp</dimen>
+    <dimen name="mine_photo_width_height">120dp</dimen>
+    <dimen name="mine_photo_bg_width_height">124dp</dimen>
+    <dimen name="create_act_frist_step_story_height">35dp</dimen>
+    <dimen name="expand_tab_eara_height">380dp</dimen>
+
+    <!-- 距边框的距离 -->
+    <dimen name="padding_to_frame">15dp</dimen>
+    <dimen name="login_et_height">38dp</dimen>
+
+    <!-- 个人信息vip等级绿色矩形画的距离 -->
+    <dimen name="per_info_vip_precent_start_x">2dip</dimen>
+    <dimen name="per_info_vip_precent_start_y">2dip</dimen>
+    <dimen name="per_info_vip_precent_end_y">4dip</dimen>
+
+    <item name="menuFromDegrees" format="float" type="dimen">180.0</item>
+    <item name="menuToDegrees" format="float" type="dimen">360.0</item>
+
+    <dimen name="menuChildSize">30dp</dimen>
+    <dimen name="margin_three">5dp</dimen>
+    <dimen name="search_vertical_margin">9dp</dimen>
+    <dimen name="login_register_left_right_margin">20dp</dimen>
+
+      <!-- 头像和阴影到上边的距离 -->
+    <dimen name="photo_diment_stroke_magintop">31dp</dimen>
+    <!-- 头像和阴影到左边的距离 -->
+    <dimen name="photo_diment_stroke_maginlef">15dp</dimen>
+    <!--  title 头像-->
+      <dimen name="photo_title">30dp</dimen>
+      
+      <dimen name="button_drop_horizontal_margin">9dp</dimen>
+      <dimen name="data_line_width">0.01dp</dimen>
+</resources>

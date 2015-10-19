@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" >
+    <include
+	layout="@layout/two_or_one_btn_head"/>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+        <EditText
+        android:id="@+id/register_next_verification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mobile_verification_hint"
+        android:singleLine="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="@dimen/login_register_left_right_margin"
+        android:layout_marginRight="@dimen/login_register_left_right_margin"
+        android:background="@drawable/login_verification_et_drawable"
+        android:maxLength="7"
+        android:textSize="@dimen/h3"/>
+        <EditText
+        android:id="@+id/register_next_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mobile_register_pwd_hint"
+        android:singleLine="true"
+        android:password="true"
+        android:background="@drawable/login_register_pwd_et_drawable"
+        android:layout_marginLeft="@dimen/login_register_left_right_margin"
+        android:layout_marginRight="@dimen/login_register_left_right_margin"
+        android:layout_marginTop="15dp"
+        android:maxLength="17"
+        android:textSize="@dimen/h3"/>
+        
+        
+        <EditText
+        android:id="@+id/register_next_nick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mobile_nick_name_hint"
+        android:singleLine="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="@dimen/login_register_left_right_margin"
+        android:layout_marginRight="@dimen/login_register_left_right_margin"
+        android:background="@drawable/login_nick_et_drawable"
+        android:maxLength="20"
+        android:textSize="@dimen/h3"/>
+        
+        
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_et_paddingLeft"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        
+            <CheckBox
+            android:id="@+id/register_cb_term"
+            style="@style/register_checkbox_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+            
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:text="@string/register_term_before_hint"/>
+            
+            <TextView
+            android:id="@+id/register_term_after_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/register_term_after_hint"
+            android:textColor="@color/red"/>
+            
+        </LinearLayout>
+        
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+            <TextView
+            android:id="@+id/register_next_register_btn"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/btn_register_complete"
+		    android:text="@string/mobile_forget_pwd_success_btn"
+		    android:textColor="@color/white"
+		    android:layout_marginLeft="@dimen/login_register_left_right_margin"
+		    android:gravity="center"
+		    android:textSize="@dimen/h3"/>
+	              
+	          
+			<TextView
+			android:id="@+id/register_next_again_send"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/btn_register_send_again_gray"
+		    android:textColor="@color/white"
+		    android:text="重新发送(60)"
+		    android:gravity="center"
+		    android:layout_marginRight="@dimen/login_register_left_right_margin"
+		    android:layout_alignParentRight="true"
+		    android:textSize="@dimen/h3"/>         
+        </RelativeLayout>
+        
+    </LinearLayout>
+    
+   
+
+</LinearLayout>

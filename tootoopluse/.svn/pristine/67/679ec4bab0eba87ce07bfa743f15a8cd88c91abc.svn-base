@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/view_margin_top"
+        style="@style/ListViewDriverStyle"
+        android:layout_width="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_username_good"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_below="@id/view_margin_top"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="100" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="80"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <CheckedTextView
+                android:id="@+id/ct_home_username"
+                style="@style/TvStyleDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/margin_three"
+                android:drawablePadding="@dimen/button_horizontal_margin"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/h3" />
+
+            <CheckedTextView
+                android:id="@+id/ct_time"
+                style="@style/TvStyleDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/margin_three"
+                android:drawableLeft="@drawable/home_icon_time"
+                android:drawablePadding="@dimen/button_horizontal_margin"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/h4" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_home"
+        android:layout_width="match_parent"
+        android:layout_height="213dp"
+        android:layout_below="@+id/ll_username_good" />
+
+    <ImageView
+        android:id="@+id/iv_again_push"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/viewpager_home"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/tab_height"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:src="@drawable/home_again"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_user_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/viewpager_home"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:src="@drawable/home_icon_user_info"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_edi_tep"
+        android:layout_width="@dimen/activity_edi_tep"
+        android:layout_height="213dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/viewpager_home"
+        android:background="@color/halftransparent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:id="@+id/ll_edi_switch"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="24"
+            android:background="@color/black"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <CheckedTextView
+                style="@style/TvStyleDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_home_edit"
+                android:drawablePadding="10dp"
+                android:text="@string/edi_again"
+                android:textColor="@color/white"
+                android:textSize="@dimen/h0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="76"
+            android:orientation="vertical"
+            android:weightSum="3" >
+
+            <LinearLayout
+                android:id="@+id/ll_first"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <CheckedTextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/one"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/h1" />
+
+                <CheckedTextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/button_horizontal_margin"
+                    android:text="@string/three"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/h3" />
+
+                <CheckedTextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/button_horizontal_margin"
+                    android:drawableRight="@drawable/icon_applay_row"
+                    android:text="@string/sele_act_wis"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/h4" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_second"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <CheckedTextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/two"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/h1" />
+
+                <CheckedTextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/button_horizontal_margin"
+                    android:text="@string/three"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/h3" />
+
+                <CheckedTextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/button_horizontal_margin"
+                    android:drawableRight="@drawable/icon_applay_row"
+                    android:text="@string/edi_wish_detail"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/h4" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_third"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <CheckedTextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/three_"
+                    android:textColor="@color/btn_org_color"
+                    android:textSize="@dimen/h1" />
+
+                <CheckedTextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/button_horizontal_margin"
+                    android:text="@string/three"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/h3" />
+
+                <CheckedTextView
+                    style="@style/TvStyleDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/button_horizontal_margin"
+                    android:drawableRight="@drawable/icon_applay_row"
+                    android:text="@string/editext_activity_info"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/h4" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_wish_photo_stroke"
+        android:layout_width="@dimen/photo_diment_stroke"
+        android:layout_height="@dimen/photo_diment_stroke"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/photo_diment_stroke_magintop"
+        android:src="@drawable/round_white" />
+
+    <ImageView
+        android:id="@+id/iv_wish_photo"
+        android:layout_width="@dimen/photo_diment"
+        android:layout_height="@dimen/photo_diment"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/photo_diment_stroke_magintop"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_default_photo" />
+
+    <LinearLayout
+        android:id="@+id/ll_activity_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/viewpager_home"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="@drawable/ico_gooding"
+        android:gravity="right|center_vertical" >
+
+        <CheckedTextView
+            android:id="@+id/ct_activity_status"
+            style="@style/TvStyleDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="@string/home_page_ongoing"
+            android:textSize="@dimen/h3" />
+    </LinearLayout>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewpager_home"
+        layout="@layout/online_bottom" />
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewpager_home"
+        layout="@layout/donw_line_bottom" />
+
+</RelativeLayout>

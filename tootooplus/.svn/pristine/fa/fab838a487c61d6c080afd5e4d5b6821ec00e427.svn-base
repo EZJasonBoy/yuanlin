@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center_vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relative_headphoto"
+        android:layout_width="50dp"
+        android:layout_height="@dimen/headphoto_heighth"
+        android:layout_marginBottom="13dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="13dp" >
+
+        <ImageView
+            android:id="@+id/mymsgitem_iv_headphoto"
+            android:layout_width="@dimen/headphoto_width"
+            android:layout_height="@dimen/headphoto_heighth"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/mymsgitem_icon_vip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_vip_1" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_toLeftOf="@+id/relative"
+        android:layout_toRightOf="@id/relative_headphoto" >
+
+        <TextView
+            android:id="@+id/mymsgitem_tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点亮精彩人生"
+            android:textColor="@color/title_textcolor"
+            android:textSize="@dimen/h2" />
+
+        <TextView
+            android:id="@+id/mymsgitem_tv_msgcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mymsgitem_tv_nickname"
+            android:layout_marginTop="10dp"
+            android:text="邀请你参加白痴活东"
+            android:textColor="@color/btn_gray_color"
+            android:textSize="@dimen/h5" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="6dp" >
+
+        <Button
+            android:id="@+id/mymsgitem_btn_agree"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/mymsgitem_tv_msgsendtime"
+            android:background="@drawable/agree_btn_bg_f"
+            android:text="同意"
+            android:textColor="#ff6d06"
+            android:textSize="@dimen/h5"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/mymsgitem_tv_msgsendtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="1小时前"
+            android:textColor="@color/btn_gray_color"
+            android:textSize="@dimen/h5" />
+    </RelativeLayout>
+
+</RelativeLayout>

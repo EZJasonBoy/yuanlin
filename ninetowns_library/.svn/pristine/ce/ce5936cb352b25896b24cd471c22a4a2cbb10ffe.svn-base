@@ -1,0 +1,1049 @@
+package com.ninetowns.library.util;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.RandomAccessFile;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.apache.http.Header;
+import org.apache.http.util.EncodingUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+
+import android.annotation.SuppressLint;
+import android.app.PendingIntent;
+import android.app.PendingIntent.CanceledException;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
+import android.net.Uri;
+import android.os.Environment;
+import android.os.StatFs;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
+import android.view.Display;
+import android.view.WindowManager;
+import android.widget.Toast;
+
+
+public class BaseCommonUtil {
+	private static final String INSTALLATION = "INSTALLATION";
+
+	private static String sID = null;
+	public static final String VIDEO = ImageUtil.TOO_HOST + File.separator
+			+ "video";
+	/**
+	 * 线程本地化实例化日期
+	 */
+	private final static ThreadLocal<SimpleDateFormat> dateFormater2 = new ThreadLocal<SimpleDateFormat>() {
+		@Override
+		protected SimpleDateFormat initialValue() {
+			return new SimpleDateFormat("yyyy-MM-dd");
+		}
+	};
+	/**
+	 * 线程本地化实例化日期
+	 */
+	private final static ThreadLocal<SimpleDateFormat> dateFormater = new ThreadLocal<SimpleDateFormat>() {
+		@Override
+		protected SimpleDateFormat initialValue() {
+			return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		}
+	};
+	/**
+	 * 拍照照片所存放的路径
+	 * 
+	 * @return
+	 */
+	public static String getVideoPath() {
+
+		final File path = new File(VIDEO);
+		if (!path.exists()) {
+			path.mkdirs();
+		}
+		return VIDEO;
+	}
+
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 是否是邮箱
+	 * @author wuyulong
+	 * @date 2014-7-14 下午5:59:58
+	 * @param
+	 * @return boolean
+	 */
+
+	public static boolean isValidEmail(String paramString) {
+		boolean flag = false;
+		try {
+			String format = "^[A-Za-z0-9][\\w\\._]*[a-zA-Z0-9]+@[A-Za-z0-9-_]+\\.([A-Za-z]{2,4})";
+			Pattern regex = Pattern.compile(format);
+			Matcher matcher = regex.matcher(paramString);
+			flag = matcher.matches();
+		} catch (Exception e) {
+			flag = false;
+		}
+		paramString = null;
+		return flag;
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 判断用户名是否正确(昵称中英文,数字,"-","_")
+	 * @author wuyulong
+	 * @date 2014-7-14 下午6:00:49
+	 * @param
+	 * @return boolean
+	 */
+	public static boolean isValidName(String paramString) {
+		boolean isValiName = false;
+		String format = "[\\u4e00-\\u9fa5\\w-]+$";
+		if (!TextUtils.isEmpty(paramString)) {
+			Pattern pattern = Pattern.compile(format);
+			Matcher isMatcher = pattern.matcher(paramString);
+			if (isMatcher.matches()) {
+				isValiName = true;
+			} else {
+				isValiName = false;
+			}
+			return isValiName;
+		} else {
+			return isValiName;
+		}
+	}
+
+	/**
+	 * 判断用户名是否正确(昵称为4-24个字符)
+	 * 
+	 * @param name
+	 * @return
+	 */
+	public static boolean isValidNameLength(String name) {
+		boolean isValidLength = false;
+		if (!TextUtils.isEmpty(name)) {
+			int chineseLenght = StringUtils.getChineseTextCount(name);
+			// 按英文为一个字符，汉语为两个字符计算以后的长度
+			int validLength = name.length() + chineseLenght;
+			if (validLength >= 4 && validLength <= 24) {
+				isValidLength = true;
+			} else {
+				isValidLength = false;
+			}
+			return isValidLength;
+		} else {
+			return isValidLength;
+		}
+
+	}
+
+	/**
+	 * 判断评论发送内容长度是否规范
+	 * 
+	 */
+	public static boolean isValidSendLength(String content, int length) {
+		boolean isValidLength = false;
+		if (!TextUtils.isEmpty(content)) {
+			int chineseLenght = StringUtils.getChineseTextCount(content);
+			// 按英文为一个字符，汉语为两个字符计算以后的长度
+			int validLength = content.length() + chineseLenght;
+			if (validLength <= length) {
+				isValidLength = true;
+			} else {
+				isValidLength = false;
+			}
+		}
+		return isValidLength;
+
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 最多输入20个字符
+	 * @author wuyulong
+	 * @date 2014-8-26 下午5:42:38
+	 * @param
+	 * @return boolean
+	 */
+	public static boolean isEditorStoryTitleLength(String name) {
+		boolean isValidLength = false;
+		if (!TextUtils.isEmpty(name)) {
+			int chineseLenght = StringUtils.getChineseTextCount(name);
+			// 按英文为一个字符，汉语为两个字符计算以后的长度
+			int validLength = name.length() + chineseLenght;
+			if (validLength > 0 && validLength <= 20) {
+				isValidLength = true;
+			} else {
+				isValidLength = false;
+			}
+			return isValidLength;
+		} else {
+			return isValidLength;
+		}
+
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 最多输入100个字符
+	 * @author wuyulong
+	 * @date 2014-8-26 下午5:42:38
+	 * @param
+	 * @return boolean
+	 */
+	public static boolean isEditorStoryTextLength(String name) {
+		boolean isValidLength = false;
+		if (!TextUtils.isEmpty(name)) {
+			int chineseLenght = StringUtils.getChineseTextCount(name);
+			// 按英文为一个字符，汉语为两个字符计算以后的长度
+			int validLength = name.length() + chineseLenght;
+			if (validLength > 0 && validLength <= 100) {
+				isValidLength = true;
+			} else {
+				isValidLength = false;
+			}
+			return isValidLength;
+		} else {
+			return isValidLength;
+		}
+
+	}
+
+	/**
+	 * 判断用户真实姓名是否正确(中文名只允许中英文)
+	 * 
+	 * @param paramString
+	 * @return
+	 */
+	public static boolean isValidRealName(String paramString) {
+		boolean isValiName = false;
+		String format = "[\u4e00-\u9fa5_a-zA-Z]+$";
+		if (!TextUtils.isEmpty(paramString)) {
+			Pattern pattern = Pattern.compile(format);
+			Matcher isMatcher = pattern.matcher(paramString);
+			if (isMatcher.matches()) {
+				isValiName = true;
+			} else {
+				isValiName = false;
+			}
+			return isValiName;
+		} else {
+			return isValiName;
+		}
+	}
+
+	/**
+	 * 判断邮政编码是否正确(只允许数字，长度必须为6)
+	 * 
+	 * @param paramString
+	 * @return
+	 */
+	public static boolean isValidPostCode(String paramString) {
+		boolean isValiName = false;
+		String format = "\\d{6}$";
+		if (!TextUtils.isEmpty(paramString)) {
+			Pattern pattern = Pattern.compile(format);
+			Matcher isMatcher = pattern.matcher(paramString);
+			if (isMatcher.matches()) {
+				isValiName = true;
+			} else {
+				isValiName = false;
+			}
+			return isValiName;
+		} else {
+			return isValiName;
+		}
+	}
+
+	/**
+	 * 判断用户真实名是否正确(真实名称为20个字符以内)
+	 * 
+	 * @param name
+	 * @return
+	 */
+	public static boolean isValidRealNameLength(String name) {
+		boolean isValidLength = false;
+		if (!TextUtils.isEmpty(name)) {
+			int chineseLenght = StringUtils.getChineseTextCount(name);
+			// 按英文为一个字符，汉语为两个字符计算以后的长度
+			int validLength = name.length() + chineseLenght;
+			if (validLength >= 0 && validLength <= 20) {
+				isValidLength = true;
+			} else {
+				isValidLength = false;
+			}
+			return isValidLength;
+		} else {
+			return isValidLength;
+		}
+
+	}
+
+	/**
+	 * 判断详细地址不能超过100个字符
+	 * 
+	 * @param name
+	 * @return
+	 */
+	public static boolean isValidDetailAdressLength(String name) {
+		boolean isValidLength = false;
+		if (!TextUtils.isEmpty(name)) {
+			int chineseLenght = StringUtils.getChineseTextCount(name);
+			// 按英文为一个字符，汉语为两个字符计算以后的长度
+			int validLength = name.length() + chineseLenght;
+			if (validLength >= 0 && validLength <= 100) {
+				isValidLength = true;
+			} else {
+				isValidLength = false;
+			}
+			return isValidLength;
+		} else {
+			return isValidLength;
+		}
+
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 判断密码格式是否正确(6-16位数字、字母或常用符号，字母区分大小写)
+	 * @author wuyulong
+	 * @date 2014-7-14 下午6:01:16
+	 * @param
+	 * @return boolean
+	 */
+	public static boolean isValidPwd(String paramString) {
+		boolean isValidPwd = false;
+		String regex = "[A-Za-z0-9-_!@#$%^&*]{6,16}$";
+		if (!TextUtils.isEmpty(paramString)) {
+			Pattern pattern = Pattern.compile(regex);
+			Matcher isMatcher = pattern.matcher(paramString);
+			if (isMatcher.matches()) {
+				isValidPwd = true;
+			} else {
+				isValidPwd = false;
+			}
+			return isValidPwd;
+		} else {
+			return isValidPwd;
+		}
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 判断是否是手机号
+	 * @author wuyulong
+	 * @date 2014-7-14 下午6:01:35
+	 * @param
+	 * @return boolean
+	 */
+	public static boolean isValidMobiNumber(String paramString) {
+		boolean isValidMobiNumber = false;
+		String regex = "^1\\d{10}$";
+		if (!TextUtils.isEmpty(paramString)) {
+			Pattern pattern = Pattern.compile(regex);
+			Matcher isMatcher = pattern.matcher(paramString);
+			if (isMatcher.matches()) {
+				isValidMobiNumber = true;
+			} else {
+				isValidMobiNumber = false;
+			}
+			return isValidMobiNumber;
+		} else {
+			return isValidMobiNumber;
+		}
+	}
+
+	/**
+	 * 从assets文件夹中获取文件并读取数据
+	 * 
+	 * @param context
+	 * @param fileName
+	 * @return
+	 */
+	public static String getFromAssets(Context context, String fileName) {
+		String result = "";
+		try {
+			InputStream in = context.getResources().getAssets().open(fileName);
+			// 获取文件的字节数
+			int lenght = in.available();
+			// 创建byte数组
+			byte[] buffer = new byte[lenght];
+			// 将文件中的数据读到byte数组中
+			in.read(buffer);
+			result = EncodingUtils.getString(buffer, "UTF-8");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	
+	private static final String TAG = "CommonUtil";
+
+	/**
+	 * 像素转换为dp
+	 * 
+	 * @param context
+	 * @param px
+	 * @return
+	 */
+	public static int convertPxToDp(Context context, int px) {
+		WindowManager wm = (WindowManager) context
+				.getSystemService(Context.WINDOW_SERVICE);
+		Display display = wm.getDefaultDisplay();
+		DisplayMetrics metrics = new DisplayMetrics();
+		display.getMetrics(metrics);
+		float logicalDensity = metrics.density;
+		int dp = Math.round(px / logicalDensity);
+		return dp;
+	}
+
+	/**
+	 * dp转换为素
+	 * 
+	 * @param context
+	 * @param dp
+	 * @return
+	 */
+	public static int convertDpToPx(Context context, int dp) {
+		return Math.round(TypedValue.applyDimension(
+				TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources()
+						.getDisplayMetrics()));
+	}
+
+	public static int getWidth(Context context) {
+		WindowManager windowManager = (WindowManager) context
+				.getSystemService(Context.WINDOW_SERVICE);
+		Display display = windowManager.getDefaultDisplay();
+
+		int width = display.getWidth();
+		// int height = display.getHeight();
+		return width;
+	}
+
+	public static int getHeight(Context context) {
+		WindowManager windowManager = (WindowManager) context
+				.getSystemService(Context.WINDOW_SERVICE);
+		Display display = windowManager.getDefaultDisplay();
+
+		// int width = display.getWidth();
+		int height = display.getHeight();
+		return height;
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 转化成时间
+	 * @author wuyulong
+	 * @date 2014-7-21 下午5:34:36
+	 * @param
+	 * @return String
+	 */
+	public static String toTime(int times) {
+
+		times /= 1000;
+		int minutes = times / 60;
+		int hour = minutes / 60;
+		int seconds = times % 60;
+		minutes %= 60;
+		return String.format("%02d:%02d", minutes, seconds);
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 格式化时间
+	 * @author wuyulong
+	 * @date 2014-7-22 上午8:51:48
+	 * @param
+	 * @return String
+	 */
+	public static String formatDuration(int time) {
+		String formatTime = null;
+		int sec = time / 1000;
+		int min = sec % 3600 / 60;
+		int hour = sec / 3600;
+		int seconds = sec % 3600 % 60;
+		if (hour > 0) {
+			formatTime = String.format("%02d:%02d:%02d", hour, min, sec);
+		} else {
+			formatTime = String.format("%02d:%02d", min, seconds);
+		}
+		// Log.i(TAG, "formatTime = " + formatTime);
+
+		return formatTime;
+	}
+
+	public static String formatDurationTime(int timefinish) {
+		String formatTime = null;
+		int sec = timefinish / 1000;
+		int min = sec % 3600 / 60;
+		int hour = sec / 3600;
+		int seconds = sec % 3600 % 60;
+		if (hour > 0) {
+			formatTime = String.format("%02d:%02d:%02d", hour, min, sec);
+		} else {
+			formatTime = String.format("%02d:%02d", min, seconds);
+		}
+		// Log.i(TAG, "formatTime = " + formatTime);
+
+		return formatTime;
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: sdcard路径
+	 * @author wuyulong
+	 * @date 2014-7-22 下午4:46:32
+	 * @param
+	 * @return String
+	 */
+	public static String getSDPath() {
+		String sdDir = null;
+		boolean sdCardExist = Environment.getExternalStorageState().equals(
+				Environment.MEDIA_MOUNTED); // 判断sd卡是否存在
+		if (sdCardExist) {
+			sdDir = Environment.getExternalStorageDirectory().getPath();// 获取跟目录
+		}
+		return sdDir;
+
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: md5加密
+	 * @author wuyulong
+	 * @date 2014-7-23 下午1:56:08
+	 * @param
+	 * @return String
+	 */
+	public static String md5(String string) {
+		byte[] hash;
+		try {
+			hash = MessageDigest.getInstance("MD5").digest(
+					string.getBytes("UTF-8"));
+		} catch (NoSuchAlgorithmException e) {
+			throw new RuntimeException("Huh, MD5 should be supported?", e);
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException("Huh, UTF-8 should be supported?", e);
+		}
+
+		StringBuilder hex = new StringBuilder(hash.length * 2);
+		for (byte b : hash) {
+			if ((b & 0xFF) < 0x10)
+				hex.append("0");
+			hex.append(Integer.toHexString(b & 0xFF));
+		}
+		return hex.toString();
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 手势识别公共方法，返回数据
+	 * @author wuyulong
+	 * @date 2014-7-25 上午9:33:47
+	 * @param
+	 * @return void
+	 */
+	public static void onSuccessGesture(Context context, byte[] arg2,
+			String tag, String successMessage, String errorFail,
+			String paramerror) {
+		if (arg2 != null) {
+			String isSuccess = StringUtils.ByteToString(arg2);
+			try {
+				JSONObject obj = new JSONObject(isSuccess);
+				int status = obj.getInt("Status");
+				if (status == 1) {
+					LogUtil.systemlogInfo(tag, successMessage);
+				} else if (status == 2000) {
+					LogUtil.systemlogError(tag, paramerror);
+
+				} else if (status == 1410) {// 失败
+					Toast.makeText(context, errorFail, 0).show();
+				}
+				arg2 = null;// 数据制空
+			} catch (JSONException e) {
+				e.printStackTrace();
+				LogUtil.systemlogError(tag, e.toString());
+			}
+		} else {
+			LogUtil.systemlogError(tag, "gesture控制返回数据为null");
+		}
+	}
+
+	public static String getTiemDateFromeLong(long time) {
+		// SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		java.util.Date dt = new Date(time * 1000);
+		String date = df.format(dt);
+		return date;
+
+	}
+
+	public static SimpleDateFormat df = new SimpleDateFormat(
+			"yyyy-MM-dd HH:mm:ss");
+
+	private static String DIRECTORY;
+
+    private static String sdcardPath;
+
+    private static long availableSpare;
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 或得当前的时间
+	 * @author wuyulong
+	 * @date 2014-9-11 下午4:27:48
+	 * @param
+	 * @return String
+	 */
+	public static String getCurrentDate() {
+
+		String t = df.format(new Date());
+
+		return t;
+	}
+
+	public static String getCurrentDateVideo() {
+
+		String t = df.format(new Date());
+		t = t.replace(" ", "").replace(":", "-");
+		return t;
+	}
+
+	public static String getDCIMurl() {
+		if (ExistSDCard()) {
+			String DCIM = Environment.getExternalStoragePublicDirectory(
+					Environment.DIRECTORY_DCIM).toString();
+			DIRECTORY = DCIM + "/Camera";
+		} else {
+			DIRECTORY = "/DCIM/Camera";
+		}
+		return DIRECTORY;
+
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 查询sdcard总容量
+	 * @author wuyulong
+	 * @date 2014-9-11 下午5:01:15
+	 * @param
+	 * @return long
+	 */
+	public static long getSDAllSize() {
+		// 取得SD卡文件路径
+		File path = Environment.getExternalStorageDirectory();
+		StatFs sf = new StatFs(path.getPath());
+		// 获取单个数据块的大小(Byte)
+		long blockSize = sf.getBlockSize();
+		// 获取所有数据块数
+		long allBlocks = sf.getBlockCount();
+		// 返回SD卡大小
+		// return allBlocks * blockSize; //单位Byte
+		// return (allBlocks * blockSize)/1024; //单位KB
+		return (allBlocks * blockSize) / 1024 / 1024; // 单位MB
+	}
+	  // 获取SD卡路径  
+    public static String getExternalStoragePath() {  
+        // 获取SdCard状态  
+        String state = android.os.Environment.getExternalStorageState();  
+        sdcardPath=android.os.Environment.getExternalStorageDirectory()  
+        .getPath();
+  
+        // 判断SdCard是否存在并且是可用的  
+  
+  
+        return sdcardPath;  
+  
+    }  
+    /**
+     * 
+    * @Title: CommonUtil.java  
+    * @Description: 获取sdcard 可用空间 
+    * @author wuyulong
+    * @date 2014-10-21 上午10:21:00  
+    * @param 
+    * @return long
+     */
+    public static long getAvailableStore(Context context) {  
+        String path=getExternalStoragePath();
+        if(!StringUtils.isEmpty(path)){//
+            StatFs statFs = new StatFs(path);  
+            
+            // 获取block的SIZE  
+      
+            long blocSize = statFs.getBlockSize();  
+      
+            // 获取BLOCK数量  
+      
+            // long totalBlocks = statFs.getBlockCount();  
+      
+            // 可使用的Block的数量  
+      
+            long availaBlock = statFs.getAvailableBlocks();  
+      
+            // long total = totalBlocks * blocSize;  
+      
+             availableSpare = availaBlock * blocSize;  
+            return availableSpare;  
+        }else{
+            ComponentUtil.showToast(context, "sdcard不可用");
+            return -1;
+        }
+        
+  
+    }  
+	/**
+	 * '
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 判断sdcard 是否存在
+	 * @author wuyulong
+	 * @date 2014-9-11 下午5:06:12
+	 * @param
+	 * @return boolean
+	 */
+	public static boolean ExistSDCard() {
+		if (android.os.Environment.getExternalStorageState().equals(
+				android.os.Environment.MEDIA_MOUNTED)) {
+			return true;
+		} else
+			return false;
+	}
+
+	/**
+	 * 
+	 * @Title: CommonUtil.java
+	 * @Description: 查看sdcard的剩余容量
+	 * @author wuyulong
+	 * @date 2014-9-11 下午5:05:37
+	 * @param
+	 * @return long
+	 */
+	public static long getSDFreeSize() {
+		// 取得SD卡文件路径
+		File path = Environment.getExternalStorageDirectory();
+		StatFs sf = new StatFs(path.getPath());
+		// 获取单个数据块的大小(Byte)
+		long blockSize = sf.getBlockSize();
+		// 空闲的数据块的数量
+		long freeBlocks = sf.getAvailableBlocks();
+		// 返回SD卡空闲大小
+		// return freeBlocks * blockSize; //单位Byte
+		// return (freeBlocks * blockSize)/1024; //单位KB
+		return (freeBlocks * blockSize) / 1024 / 1024; // 单位MB
+	}
+
+	// static SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	/**
+	 * @param time
+	 *            单位是秒
+	 * @return
+	 */
+	public static String getDurationToCurrent(String time) {
+		// 1410403855000
+		// 1410413158273
+		long l = Long.parseLong(time);
+		long current = System.currentTimeMillis();
+		long timeDiff = current / 1000 - l;// 得到秒值
+
+		if (timeDiff <= 60) {
+			return "刚刚";
+		} else if (timeDiff < (60 * 60)) {
+			return (timeDiff / 60) + "分钟前";
+		} else if (timeDiff < (60 * 60 * 24)) {
+			return (timeDiff / 60 / 60) + "小时前";
+		} else if (timeDiff >= (60 * 60 * 24) && timeDiff < (60 * 60 * 48)) {
+			return "昨天";
+		} else if (timeDiff >= (60 * 60 * 48) && timeDiff < (60 * 60 * 72)) {
+			return "1天前";
+		} else {
+			if ((timeDiff / (3600 * 24)) <= 30) {
+				return (timeDiff / (3600 * 24)) + "天前";
+			} else {
+				return "";
+			}
+		}
+	}
+
+	public static String getVersionName(Context context) {
+		try {
+			PackageManager manager = context.getPackageManager();
+			PackageInfo info = manager.getPackageInfo(context.getPackageName(),
+					0);
+			String versionName = info.versionName;
+			return versionName;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "检测不到版本号";
+		}
+	}
+
+	// 获取android设备的唯一标识
+
+	public static String getuniqueId(Context context) {
+
+		TelephonyManager tm = (TelephonyManager) context
+				.getSystemService(Context.TELEPHONY_SERVICE);
+
+		String imei = tm.getDeviceId();
+
+		// String simSerialNumber = tm.getSimSerialNumber();
+		if (imei == null) {
+			imei = getSId(context);
+		}
+		return imei;
+	}
+
+	private static void writeInstallationFile(File installation)
+			throws IOException {
+		FileOutputStream out = new FileOutputStream(installation);
+		String id = UUID.randomUUID().toString();
+		out.write(id.getBytes());
+		out.close();
+	}
+
+	private static String readInstallationFile(File installation)
+			throws IOException {
+		RandomAccessFile f = new RandomAccessFile(installation, "r");
+		byte[] bytes = new byte[(int) f.length()];
+		f.readFully(bytes);
+		f.close();
+		return new String(bytes);
+	}
+
+	public synchronized static String getSId(Context context) {
+		if (sID == null) {
+			File installation = new File(context.getFilesDir(), INSTALLATION);
+			try {
+				if (!installation.exists())
+					writeInstallationFile(installation);
+				sID = readInstallationFile(installation);
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
+		}
+		return sID;
+	}
+
+
+
+
+
+	public static int[] getMonthAndDayFromDate(String time) {
+		int[] dates = new int[2];
+		try {
+			Date date = df.parse(time);
+
+			Calendar cal = Calendar.getInstance();
+			cal.setTime(date);
+			int month = cal.get(Calendar.MONTH);
+			dates[0] = month + 1;
+			dates[1] = cal.get(Calendar.DAY_OF_MONTH);
+			return dates;
+		} catch (ParseException e) {
+			e.printStackTrace();
+			LogUtil.error(TAG, e.getMessage());
+		}
+		return null;
+	}
+
+	public static boolean DelayTime(long dwTimeMS) {
+
+		boolean bInterrupted = false;
+		if (0 != dwTimeMS) {
+			try {
+				Thread.sleep(dwTimeMS);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				bInterrupted = true;
+			}
+		}
+
+		return bInterrupted;
+
+	}
+
+	@SuppressLint("SimpleDateFormat")
+	public static long parseTimeToLong(String time) {
+		long epoch = 0 ;
+		time=time+":00";
+		Calendar c=Calendar.getInstance();
+		time=c.get(Calendar.YEAR)+":"+(c.get(Calendar.MONTH)+1)+":"+c.get(Calendar.DAY_OF_MONTH)+" "+time;
+		try {
+			Date date=new java.text.SimpleDateFormat("yyyy:MM:dd HH:mm:ss").parse(time);
+			 epoch = date.getTime()/1000;
+			return epoch;
+		
+		} catch (ParseException e) {
+			e.printStackTrace();
+			LogUtil.error(TAG, e.getMessage());
+		}
+		return epoch;
+	}
+	/**
+	 * 
+	* @Title: CommonUtil.java  
+	* @Description: 取整 投资
+	* @author wuyulong
+	* @date 2014-10-28 下午3:21:04  
+	* @param 
+	* @return double
+	 */
+	public static double parseInverte(double t){
+	        double count=t%10;
+	        if(count>0){//如果对10取余大于0
+	            t=t-count;
+	        }
+	        return t;
+	}
+	
+	/**
+	 * 将字符串转位日期类型
+	 * @param sdate
+	 * @return
+	 */
+	public static Date toDate(String sdate) {
+		try {
+			return dateFormater.get().parse(sdate);
+		} catch (ParseException e) {
+			return null;
+		}
+	}	
+	/**
+	 * 以友好的方式显示时间
+	 * @param sdate
+	 * @return
+	 */
+	public static String friendly_time(String sdate) {
+		Date time = toDate(sdate);
+		if(time == null) {
+			return "Unknown";
+		}
+		String ftime = "";
+		Calendar cal = Calendar.getInstance();
+		
+		//判断是否是同一天
+		String curDate = dateFormater2.get().format(cal.getTime());
+		String paramDate = dateFormater2.get().format(time);
+		if(curDate.equals(paramDate)){
+			int hour = (int)((cal.getTimeInMillis() - time.getTime())/3600000);
+			if(hour == 0)
+				ftime = Math.max((cal.getTimeInMillis() - time.getTime()) / 60000,1)+"分钟前";
+			else 
+				ftime = hour+"小时前";
+			return ftime;
+		}
+		
+		long lt = time.getTime()/86400000;
+		long ct = cal.getTimeInMillis()/86400000;
+		int days = (int)(ct - lt);		
+		if(days == 0){
+			int hour = (int)((cal.getTimeInMillis() - time.getTime())/3600000);
+			if(hour == 0)
+				ftime = Math.max((cal.getTimeInMillis() - time.getTime()) / 60000,1)+"分钟前";
+			else 
+				ftime = hour+"小时前";
+		}
+		else if(days == 1){
+			ftime = "昨天";
+		}
+		else if(days == 2){
+			ftime = "前天";
+		}
+		else if(days > 2 && days <= 10){ 
+			ftime = days+"天前";			
+		}
+		else if(days > 10){			
+			ftime = dateFormater2.get().format(time);
+		}
+		return ftime;
+	}
+	
+	/**
+	 * 判断给定字符串时间是否为今日
+	 * @param sdate
+	 * @return boolean
+	 */
+	public static boolean isToday(String sdate){
+		boolean b = false;
+		Date time = toDate(sdate);
+		Date today = new Date();
+		if(time != null){
+			String nowDate = dateFormater2.get().format(today);
+			String timeDate = dateFormater2.get().format(time);
+			if(nowDate.equals(timeDate)){
+				b = true;
+			}
+		}
+		return b;
+	}
+	
+	/**
+     * 判断GPS是否开启，GPS或者AGPS开启一个就认为是开启的
+     * @param context
+     * @return true 表示开启
+     */ 
+    public static final boolean isOPen(final Context context) { 
+        LocationManager locationManager  
+                                 = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE); 
+        // 通过GPS卫星定位，定位级别可以精确到街（通过24颗卫星定位，在室外和空旷的地方定位准确、速度快） 
+        boolean gps = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER); 
+        // 通过WLAN或移动网络(3G/2G)确定的位置（也称作AGPS，辅助GPS定位。主要用于在室内或遮盖物（建筑群或茂密的深林等）密集的地方定位） 
+        boolean network = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER); 
+        if (gps || network) { 
+            return true; 
+        } 
+   
+        return false; 
+    }
+
+
+/**
+     * 强制帮用户打开GPS
+     * @param context
+     */ 
+    public static final void openGPS(Context context) { 
+        Intent GPSIntent = new Intent(); 
+        GPSIntent.setClassName("com.android.settings", 
+                "com.android.settings.widget.SettingsAppWidgetProvider"); 
+        GPSIntent.addCategory("android.intent.category.ALTERNATIVE"); 
+        GPSIntent.setData(Uri.parse("custom:3")); 
+        try { 
+            PendingIntent.getBroadcast(context, 0, GPSIntent, 0).send(); 
+        } catch (CanceledException e) { 
+            e.printStackTrace(); 
+        } 
+    }
+}

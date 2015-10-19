@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:background="@color/title_bg">
+        <include layout="@layout/include_common_titlebar" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/app_bg_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/setting_listview"
+            style="@style/frame_padding_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:cacheColorHint="#00000000"
+            android:divider="@color/divider_color"
+            android:dividerHeight="@dimen/line_heigth"
+            android:listSelector="#00000000" >
+        </ListView>
+
+        
+        <include 
+            layout="@layout/divider_line_layout"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/set_log_off_btn"
+                android:layout_width="290dp"
+                android:layout_height="45dp"
+                android:background="@drawable/btn_exitlogin_bg"
+                android:gravity="center"
+                android:text="@string/settings_log_off"
+                android:textColor="@color/white"
+                android:textSize="@dimen/h2" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

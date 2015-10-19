@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ninetowns.tootoopluse"
+    android:versionCode="2"
+    android:versionName="1.5.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <permission
+        android:name="com.ninetowns.tootooplus.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.ninetowns.tootooplus.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+       
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name="com.ninetowns.tootoopluse.application.TootooPlusEApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="aYMGoo9KBl4tlZszK7oG72RX" />
+
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 启动页面 -->
+        <activity
+            android:name=".activity.StartActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 聊天室录制视频页面 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.ChatRoomRecordVideoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+         <!-- 我的数据 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.MyLookDataActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <!-- 我的消息 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.MyMessageActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 设置 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.ChatActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+
+        <!-- 新特性指引页面 -->
+        <activity
+            android:name=".activity.FirstGuideActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 群组成员列表 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.AllMembersListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 登录页面 -->
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 设置 -->
+        <activity
+            android:name=".activity.SettingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 手机登录页面 -->
+        <activity
+            android:name=".activity.MobileLoginActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 忘记密码第一步 -->
+        <activity
+            android:name=".activity.MobileForgetPwdActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 忘记密码第二步 -->
+        <activity
+            android:name=".activity.MobileForgetPwdNextActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 手机注册第一步 -->
+        <activity
+            android:name=".activity.MobileRegisterActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 手机注册第二步 -->
+        <activity
+            android:name=".activity.MobileRegisterNextActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 服务条款 -->
+        <activity
+            android:name=".activity.ServiceTermActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 私信聊天页面 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.PrivateLetterChat"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 修改密码 -->
+        <activity
+            android:name=".activity.ChangePwdActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 修改昵称 -->
+        <activity
+            android:name=".activity.ChangeNickActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 创建活动第一步 -->
+        <activity
+            android:name=".activity.CreateActiveFirstStepActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 创建活动第三步 -->
+        <activity
+            android:name=".activity.CreateActThirdStepActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 修改活动第一步 -->
+        <activity
+            android:name=".activity.UpdateActFirstStepActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 修改活动第三步 -->
+        <activity
+            android:name=".activity.UpdateActThirdStepActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 选择城市 -->
+        <activity
+            android:name=".activity.SelectCityActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 个人首页 -->
+        <activity
+            android:name=".activity.PersonalHomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 个人信息 -->
+        <activity
+            android:name=".activity.PersonInfoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 店铺认证页面 -->
+        <activity
+            android:name=".activity.ShopCertificationActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 收货地址列表 -->
+        <activity
+            android:name=".activity.AddressListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 关注和粉丝列表 -->
+        <activity
+            android:name=".activity.FollowFansActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.CreateWishActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <activity
+            android:name=".activity.PhotoCameraActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.RecordVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name=".activity.AlbumPhotoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.CoverRecommendSelectActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.AlbumPhotoCHRecommendConvertActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.MobileAlbumActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.PhotoSelectActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.InternetBrowserActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.GatherImageDisplayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 浏览原图界面 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.SrcPicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/fide_animal_theme" >
+        </activity>
+        <activity
+            android:name=".activity.TextStoryActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.MyWishActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.WishDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.GoBuyBrowserActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.StoryDetailViewPagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.CreateActSecondStepActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ActivityDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 视频播放界面 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.VideoPlayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.MyActivityApplyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.MyDraftWishActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensor"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+        <!-- 关于我们界面 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.AboutUsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 帮助界面 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.HelpActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 意见反馈界面 -->
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.FeedBackActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.SearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+          <activity
+            android:name="com.ninetowns.tootoopluse.activity.MyFreeWishActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.ninetowns.tootoopluse.activity.MyJoinMemberActivity"
+             android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:screenOrientation="portrait" >
+        </activity>
+           <activity
+            android:name="com.ninetowns.tootoopluse.activity.MyConstanctActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.mechat.mechatlibrary.ui.ConversationActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Light" />
+        <activity android:name="com.mechat.mechatlibrary.ui.ZoomImageActivity" />
+
+        <service
+            android:name="com.wiriamubin.service.chat.ChatService"
+            android:exported="false" >
+            <intent-filter android:priority="1000" >
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.mechat.mechatlibrary.MechatService"
+            android:label="MechatService" />
+    </application>
+       <!-- 关于友盟相关信息 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="553468ea67e58e2f27000f61" >
+        </meta-data>
+        <meta-data android:name="UMENG_CHANNEL" android:value="tengxunyingyongbao" >
+        </meta-data>
+</manifest>

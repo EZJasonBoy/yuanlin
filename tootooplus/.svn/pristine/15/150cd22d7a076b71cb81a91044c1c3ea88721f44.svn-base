@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true" >
+
+    <RadioGroup
+        android:id="@+id/rg_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fotter_tab_height"
+        android:background="@color/title_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_tab_home_page"
+            style="@style/HomeTabButtonStyle"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:drawableTop="@drawable/home_selector"
+            android:text="@string/str_home_page" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_group_chat"
+            style="@style/HomeTabButtonStyle"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/chat_selector"
+            android:text="@string/str_group_chat" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_wish"
+            style="@style/HomeTabButtonStyle"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/wish_selector"
+            android:text="@string/str_wish" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_comment"
+            style="@style/HomeTabButtonStyle"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/comment_selector"
+            android:text="@string/str_comment" />
+
+        <RadioButton
+            android:id="@+id/rb_tab_mine"
+            style="@style/HomeTabButtonStyle"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/mine_selector"
+            android:text="@string/str_mine" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fotter_tab_height"
+        android:orientation="horizontal"
+        android:weightSum="5" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tv_no_write_count_act"
+                style="@style/TvStyleDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/round_red_backgroud"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/h5"
+                android:text=""
+                android:visibility="gone" />
+        </RelativeLayout>
+         <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View
+        style="@style/LineStyle"
+        android:layout_width="match_parent" />
+
+</RelativeLayout>

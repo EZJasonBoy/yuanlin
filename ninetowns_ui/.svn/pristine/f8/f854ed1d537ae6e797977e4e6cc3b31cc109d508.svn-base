@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="image_description">imageurl</string>
+    <!-- 加载数据 -->
+    <string name="loading">加载数据...</string>
+    <string name="loading_gather">正在采集图片...</string>
+    <string name="errcode_network_unavailable">网络连接不可用</string>
+    <string name="errcode_network_response_timeout">无法连接到服务器，请检查您的网络连接</string>
+    <string name="rainbo_hint">提示</string>
+    <string name="rainbo_sure">确定</string>
+    <string name="rainbo_sure_set">设置</string>
+    <string name="rainbo_cancel">取消</string>
+    <string name="hint_open_gps">亲，无法获取你的位置信息，手机设置开通定位服务后即可组团报名。</string>
+     <string name="look_help">查看帮助(1和2)</string>
+   
+    
+     <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

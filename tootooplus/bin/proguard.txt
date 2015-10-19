@@ -1,0 +1,406 @@
+# view res/layout/activity_detail_activity.xml #generated:170
+# view res/layout/create_activity_second_activity.xml #generated:78
+# view res/layout/first_guide.xml #generated:12
+# view res/layout/homepager_adapter.xml #generated:54
+# view res/layout/my_free_group.xml #generated:86
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view AndroidManifest.xml #generated:56
+-keep class android.test.InstrumentationTestRunner { <init>(...); }
+
+# view AndroidManifest.xml #generated:545
+-keep class cn.jpush.android.service.AlarmReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:504
+-keep class cn.jpush.android.service.DownloadService { <init>(...); }
+
+# view AndroidManifest.xml #generated:524
+-keep class cn.jpush.android.service.PushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:511
+-keep class cn.jpush.android.service.PushService { <init>(...); }
+
+# view AndroidManifest.xml #generated:492
+-keep class cn.jpush.android.ui.PushActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:428
+-keep class cn.sharesdk.framework.ShareSDKUIShell { <init>(...); }
+
+# view res/layout/surface_view.xml #generated:5
+-keep class com.baidu.cyberplayer.core.BVideoView { <init>(...); }
+
+# view AndroidManifest.xml #generated:485
+-keep class com.baidu.location.f { <init>(...); }
+
+# view res/layout/create_act_outline_change_view.xml #generated:162
+# view res/layout/downline_activity_fragment.xml #generated:209
+-keep class com.baidu.mapapi.map.MapView { <init>(...); }
+
+# view res/layout/arc_menu.xml #generated:4
+-keep class com.capricorn.ArcLayout { <init>(...); }
+
+# view res/layout/item_child_city_post_ares.xml #generated:9
+# view res/layout/online_activity_fragment.xml #generated:181
+-keep class com.custom.vg.list.CustomListView { <init>(...); }
+
+# view AndroidManifest.xml #generated:451
+-keep class com.mechat.mechatlibrary.MechatService { <init>(...); }
+
+# view res/layout/mc_item_chatdetail_event.xml #generated:15
+# view res/layout/mc_item_chatdetail_event.xml #generated:39
+# view res/layout/mc_item_chatdetail_event.xml #generated:48
+-keep class com.mechat.mechatlibrary.custom.CircleImageView { <init>(...); }
+
+# view res/layout/mc_item_chatdetail_left.xml #generated:70
+# view res/layout/mc_item_chatdetail_right.xml #generated:84
+-keep class com.mechat.mechatlibrary.custom.RoundProgressBar { <init>(...); }
+
+# view AndroidManifest.xml #generated:455
+-keep class com.mechat.mechatlibrary.ui.ConversationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:459
+-keep class com.mechat.mechatlibrary.ui.ZoomImageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:383
+-keep class com.ninetowns.tootooplus.activity.AboutUsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:349
+-keep class com.ninetowns.tootooplus.activity.ActivityDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:238
+-keep class com.ninetowns.tootooplus.activity.AddressAddActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:232
+-keep class com.ninetowns.tootooplus.activity.AddressListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:244
+-keep class com.ninetowns.tootooplus.activity.AddressListMineActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:250
+-keep class com.ninetowns.tootooplus.activity.AddressMineAddActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:274
+-keep class com.ninetowns.tootooplus.activity.AlbumPhotoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:282
+-keep class com.ninetowns.tootooplus.activity.AlbumPhotoCHRecommendConvertActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:115
+-keep class com.ninetowns.tootooplus.activity.AllMembersListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:184
+-keep class com.ninetowns.tootooplus.activity.ChangeNickActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:178
+-keep class com.ninetowns.tootooplus.activity.ChangePwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:102
+-keep class com.ninetowns.tootooplus.activity.ChatActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:91
+-keep class com.ninetowns.tootooplus.activity.ChatRoomRecordVideoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:278
+-keep class com.ninetowns.tootooplus.activity.CoverRecommendSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:345
+-keep class com.ninetowns.tootooplus.activity.CreateActSecondStepActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:196
+-keep class com.ninetowns.tootooplus.activity.CreateActThirdStepActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:190
+-keep class com.ninetowns.tootooplus.activity.CreateActiveFirstStepActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:260
+-keep class com.ninetowns.tootooplus.activity.CreateWishActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:480
+-keep class com.ninetowns.tootooplus.activity.FaceToFaceGroupEnterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:416
+-keep class com.ninetowns.tootooplus.activity.FeedBackActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:110
+-keep class com.ninetowns.tootooplus.activity.FirstGuideActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:256
+-keep class com.ninetowns.tootooplus.activity.FollowFansActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:304
+-keep class com.ninetowns.tootooplus.activity.GatherImageDisplayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:337
+-keep class com.ninetowns.tootooplus.activity.GoBuyBrowserActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:388
+-keep class com.ninetowns.tootooplus.activity.HelpActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:70
+-keep class com.ninetowns.tootooplus.activity.HomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:300
+-keep class com.ninetowns.tootooplus.activity.InternetBrowserActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:400
+-keep class com.ninetowns.tootooplus.activity.JoinMemberActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:125
+-keep class com.ninetowns.tootooplus.activity.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:286
+-keep class com.ninetowns.tootooplus.activity.MobileAlbumActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:142
+-keep class com.ninetowns.tootooplus.activity.MobileForgetPwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:148
+-keep class com.ninetowns.tootooplus.activity.MobileForgetPwdNextActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:136
+-keep class com.ninetowns.tootooplus.activity.MobileLoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:154
+-keep class com.ninetowns.tootooplus.activity.MobileRegisterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:160
+-keep class com.ninetowns.tootooplus.activity.MobileRegisterNextActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:368
+-keep class com.ninetowns.tootooplus.activity.MyActivityApplyActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:445
+-keep class com.ninetowns.tootooplus.activity.MyActivityCommentActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:406
+-keep class com.ninetowns.tootooplus.activity.MyCollectionActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:465
+-keep class com.ninetowns.tootooplus.activity.MyDraftFreeCommentActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:372
+-keep class com.ninetowns.tootooplus.activity.MyDraftWishActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:460
+-keep class com.ninetowns.tootooplus.activity.MyFreeCommentActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:394
+-keep class com.ninetowns.tootooplus.activity.MyFreeGroupActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:411
+-keep class com.ninetowns.tootooplus.activity.MyInvitationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:96
+-keep class com.ninetowns.tootooplus.activity.MyMessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:292
+-keep class com.ninetowns.tootooplus.activity.MyPriorityCodeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:319
+-keep class com.ninetowns.tootooplus.activity.MyWishActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:226
+-keep class com.ninetowns.tootooplus.activity.PersonInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:220
+-keep class com.ninetowns.tootooplus.activity.PersonalHomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:475
+-keep class com.ninetowns.tootooplus.activity.PhoneListMineActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:470
+-keep class com.ninetowns.tootooplus.activity.PhoneNameListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:265
+-keep class com.ninetowns.tootooplus.activity.PhotoCameraActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:296
+-keep class com.ninetowns.tootooplus.activity.PhotoSelectActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:172
+-keep class com.ninetowns.tootooplus.activity.PrivateLetterChat { <init>(...); }
+
+# view AndroidManifest.xml #generated:269
+-keep class com.ninetowns.tootooplus.activity.RecordVideoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:440
+-keep class com.ninetowns.tootooplus.activity.SearchActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:214
+-keep class com.ninetowns.tootooplus.activity.SelectCityActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:166
+-keep class com.ninetowns.tootooplus.activity.ServiceTermActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:130
+-keep class com.ninetowns.tootooplus.activity.SettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:310
+-keep class com.ninetowns.tootooplus.activity.SrcPicActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:80
+-keep class com.ninetowns.tootooplus.activity.StartActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:341
+-keep class com.ninetowns.tootooplus.activity.StoryDetailViewPagerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:74
+-keep class com.ninetowns.tootooplus.activity.TestCaseActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:315
+-keep class com.ninetowns.tootooplus.activity.TextStoryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:202
+-keep class com.ninetowns.tootooplus.activity.UpdateActFirstStepActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:208
+-keep class com.ninetowns.tootooplus.activity.UpdateActThirdStepActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:119
+-keep class com.ninetowns.tootooplus.activity.UpdateAddMineAddActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:376
+-keep class com.ninetowns.tootooplus.activity.VideoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:364
+-keep class com.ninetowns.tootooplus.activity.VideoPlayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:323
+-keep class com.ninetowns.tootooplus.activity.WishDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:58
+-keep class com.ninetowns.tootooplus.application.TootooPlusApplication { <init>(...); }
+
+# view res/layout/my_wish_fragment.xml #generated:94
+# view res/layout/wish_fragment.xml #generated:101
+-keep class com.ninetowns.tootooplus.helper.ArcMenu { <init>(...); }
+
+# view res/layout/create_active_first_step_fragment.xml #generated:94
+-keep class com.ninetowns.tootooplus.helper.ChangeItemView { <init>(...); }
+
+# view res/layout/create_act_first_step_item.xml #generated:87
+-keep class com.ninetowns.tootooplus.helper.ChangeRowsView { <init>(...); }
+
+# view res/layout/goods_category_dialogfragment.xml #generated:64
+# view res/layout/goods_type_dialogfragment.xml #generated:61
+-keep class com.ninetowns.tootooplus.helper.ExpandTabViewHelper { <init>(...); }
+
+# view res/layout/activity_allmemberlist.xml #generated:100
+# view res/layout/follow_fragment.xml #generated:31
+-keep class com.ninetowns.tootooplus.helper.SideBar { <init>(...); }
+
+# view res/layout/item_invitation.xml #generated:8
+# view res/layout/privateletter_item.xml #generated:16
+-keep class com.ninetowns.tootooplus.photoview.CircleImageView { <init>(...); }
+
+# view res/layout/person_info_fragment.xml #generated:38
+-keep class com.ninetowns.tootooplus.photoview.PerInfoVipView { <init>(...); }
+
+# view res/layout/activity_show_big_image.xml #generated:8
+-keep class com.ninetowns.tootooplus.photoview.PhotoView { <init>(...); }
+
+# view AndroidManifest.xml #generated:548
+-keep class com.ninetowns.tootooplus.util.TooJpushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:435
+-keep class com.ninetowns.tootooplus.wxapi.WXEntryActivity { <init>(...); }
+
+# view res/layout/create_act_third_step.xml #generated:286
+-keep class com.ninetowns.tootoopluse.helper.CreateActThirdChangeView { <init>(...); }
+
+# view res/layout/activity_detail_fragment.xml #generated:24
+# view res/layout/create_activity_second_step_fragment.xml #generated:22
+# view res/layout/create_wish_base_fragment.xml #generated:35
+# view res/layout/wish_detail_fragment.xml #generated:37
+-keep class com.ninetowns.ui.cooldraganddrop.CoolDragAndDropGridView { <init>(...); }
+
+# view res/layout/person_info_fragment.xml #generated:56
+-keep class com.ninetowns.ui.widget.LinearLayoutExpandListView { <init>(...); }
+
+# view res/layout/fragment_myinvitation.xml #generated:111
+-keep class com.ninetowns.ui.widget.MyGridView { <init>(...); }
+
+# view res/layout/chat_activity.xml #generated:69
+# view res/layout/mymessage_activity.xml #generated:9
+-keep class com.ninetowns.ui.widget.ScrollControlViewPager { <init>(...); }
+
+# view res/layout/time_picker.xml #generated:13
+# view res/layout/time_picker.xml #generated:19
+# view res/layout/time_picker.xml #generated:25
+# view res/layout/time_picker.xml #generated:31
+# view res/layout/time_picker.xml #generated:7
+-keep class com.ninetowns.ui.widget.WheelView { <init>(...); }
+
+# view res/layout/activity_detail_activity.xml #generated:287
+# view res/layout/comment_list_fragment.xml #generated:45
+# view res/layout/comment_list_lv_item.xml #generated:130
+# view res/layout/free_comment_list_lv_item.xml #generated:144
+# view res/layout/my_free_comment_list_lv_item.xml #generated:156
+# view res/layout/remark_story_lv_item.xml #generated:116
+# view res/layout/wish_detail_fotter.xml #generated:157
+-keep class com.ninetowns.ui.widget.WrapRatingBar { <init>(...); }
+
+# view res/layout/arc_menu_arc_menu.xml #generated:4
+-keep class com.ninetowns.ui.widget.arcmenu.ArcLayout { <init>(...); }
+
+# view res/layout/arc_menu_ray_menu.xml #generated:4
+# view res/layout/ray_menu.xml #generated:4
+-keep class com.ninetowns.ui.widget.arcmenu.RayLayout { <init>(...); }
+
+# view res/layout/clip_view_dialog_fragment.xml #generated:15
+-keep class com.ninetowns.ui.widget.clipimageview.ClipImageView { <init>(...); }
+
+# view res/layout/clip_view_dialog_fragment.xml #generated:20
+-keep class com.ninetowns.ui.widget.clipimageview.ClipView { <init>(...); }
+
+# view res/layout/category_exspand_view.xml #generated:35
+-keep class com.ninetowns.ui.widget.expandableview.EdgeEffectExpandableListView { <init>(...); }
+
+# view res/layout/horizatial_listview.xml #generated:8
+-keep class com.ninetowns.ui.widget.listview.multicolumn.HorizontalListView { <init>(...); }
+
+# view res/layout/gridview_group_photo.xml #generated:83
+# view res/layout/gridview_photo.xml #generated:24
+# view res/layout/join_member_fragment.xml #generated:46
+# view res/layout/privateletter_fragment.xml #generated:6
+-keep class com.ninetowns.ui.widget.refreshable.RefreshableGridView { <init>(...); }
+
+# view res/layout/base_wish_fragment.xml #generated:9
+# view res/layout/comment_list_fragment.xml #generated:77
+# view res/layout/group_free_comment_fragment.xml #generated:5
+# view res/layout/home_page_fragment.xml #generated:13
+# view res/layout/include_refreshlistview.xml #generated:2
+# view res/layout/msg_fragment.xml #generated:7
+# view res/layout/my_base_activity_free_comment_fragment.xml #generated:6
+# view res/layout/my_free_group_fragment.xml #generated:9
+# view res/layout/my_wish_fragment.xml #generated:9
+# view res/layout/remark_story_fragment.xml #generated:8
+# view res/layout/search_home_page_fragment.xml #generated:103
+# view res/layout/wish_fragment.xml #generated:9
+# view res/layout/wish_search_fragment.xml #generated:104
+-keep class com.ninetowns.ui.widget.refreshable.RefreshableListView { <init>(...); }
+
+# view res/layout/donw_line_bottom.xml #generated:24
+# view res/layout/downline_activity_fragment.xml #generated:120
+# view res/layout/downline_activity_fragment.xml #generated:131
+# view res/layout/downline_activity_fragment.xml #generated:142
+# view res/layout/downline_activity_fragment.xml #generated:153
+# view res/layout/item_history.xml #generated:19
+# view res/layout/join_member_fragment.xml #generated:146
+# view res/layout/join_member_fragment.xml #generated:169
+# view res/layout/join_member_fragment.xml #generated:192
+# view res/layout/online_activity_fragment.xml #generated:126
+# view res/layout/online_activity_fragment.xml #generated:137
+# view res/layout/online_bottom.xml #generated:24
+# view res/layout/online_bottom.xml #generated:78
+-keep class com.ninetowns.ui.widget.text.MarqueeTextView { <init>(...); }
+
+# view res/layout/item_pager_image.xml #generated:24
+-keep class com.ninetowns.ui.wiget.gesture.image.PhotoView { <init>(...); }
+
+# view res/layout/activity_image_story_viewpager.xml #generated:8
+-keep class com.ninetowns.ui.wiget.gesture.image.ViewPagerFixed { <init>(...); }
+
+# view AndroidManifest.xml #generated:421
+-keep class com.wiriamubin.service.chat.ChatService { <init>(...); }
+

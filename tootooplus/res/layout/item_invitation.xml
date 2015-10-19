@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    
+    <com.ninetowns.tootooplus.photoview.CircleImageView
+        android:id="@+id/item_invitation_civ_headphoto"
+        android:layout_width="@dimen/headphoto_width"
+        android:layout_height="@dimen/headphoto_heighth"
+        />
+    <TextView 
+        android:id="@+id/item_invitation_tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="15"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="#757575"
+        />
+    
+    <ImageView 
+        android:id="@+id/item_invitation_icon_viplevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_vip_1"
+        />
+    
+
+</LinearLayout>

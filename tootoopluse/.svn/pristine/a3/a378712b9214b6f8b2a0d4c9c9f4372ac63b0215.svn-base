@@ -1,0 +1,84 @@
+
+<com.ninetowns.ui.widget.HeightChangedLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg_color" >
+    <include layout="@layout/home_tab_titlebar" />
+
+    <GridView
+        android:id="@+id/gl_rember"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/rember_bottom"
+        android:layout_marginTop="@dimen/title_bar_height"
+        android:gravity="center"
+        android:horizontalSpacing="@dimen/listitem_default_padding"
+        android:numColumns="4"
+        android:scrollbars="none"
+        android:padding="5dp"
+        android:verticalSpacing="@dimen/listitem_default_padding" />
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/gl_rember"
+        android:background="@color/gray_line"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/rember_bottom"
+        android:gravity="center"
+        android:layout_alignParentBottom="true" >
+
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <EditText
+                android:id="@+id/et_left"
+                style="@style/TvStyleDefault"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@drawable/bg_gray_image"
+                android:hint="@string/enter_num"
+                android:paddingLeft="5dp" />
+
+            <TextView
+                android:id="@+id/tv_comit"
+                style="@style/TvStyleDefault"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@drawable/bg_org_btn"
+                android:text="@string/shiyong"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/h2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_middle"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/ll_top"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/tv_rem_info"
+                style="@style/TvStyleDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/h3" />
+        </LinearLayout>
+
+        
+    </RelativeLayout>
+
+</com.ninetowns.ui.widget.HeightChangedLayout>

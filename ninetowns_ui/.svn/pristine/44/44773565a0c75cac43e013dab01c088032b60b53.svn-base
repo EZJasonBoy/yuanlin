@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   
+	<string-array name="refund_reason">
+        <item>拍错了,重拍</item>
+        <item>不想要了</item>
+        <item>收货地址写错了</item>
+        <item>未按约定时间发货</item>
+    </string-array>
+    
+	
+	<string-array name="settings_array_item">
+	    <item>版本号V</item>
+	    <item>检查更新</item>
+	    <item>意见反馈</item>
+	    <item>清除缓存</item>
+	    <item>帮助</item>
+	    <item>商家合作</item>
+	    <item>关于我们</item>
+	    
+	</string-array>
+	  <attr name="expandableListViewStyle" format="reference" />
+</resources>

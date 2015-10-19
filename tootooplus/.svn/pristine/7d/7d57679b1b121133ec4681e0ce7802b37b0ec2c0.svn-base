@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dip"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="40dp"
+        android:background="#D9D9D9"
+        android:orientation="vertical"
+        android:paddingLeft="20dip"
+        android:paddingRight="20dip" >
+
+        <Button
+            android:id="@+id/photopop_selectfrom_album"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/account_btn_selector"
+            android:gravity="center"
+            android:text="从相册中选择" />
+
+        <Button
+            android:id="@+id/photopop_selectfrom_camera"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:layout_marginBottom="30dip"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/account_btn_selector"
+            android:gravity="center"
+            android:text="相机拍照" />
+
+        <Button
+            android:id="@+id/photopop_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:textColor="@color/black"
+            android:background="@drawable/cancel_btn_selector"
+            android:gravity="center"
+            android:text="取消" />
+    </LinearLayout>
+
+</LinearLayout>
